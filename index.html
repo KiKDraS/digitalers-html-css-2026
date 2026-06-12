@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Esto es un comentario. El navegador lo ignora -->
+
+<!-- 
+    HTML - Hypertext Markup Language (Lenguaje de Marcado de Hipertexto)
+        => Trabajar con HTML == Etiquetar cosas
+        => El nombre de la etiqueta permite identificar el contenido
+
+        <nombre atributos> -> Apertura (etiqueta de apertura)
+            => contenido - Todo lo que se encuentra entre la Apertura y el Cierre
+                => Puede o no ser otra/s etiqueta/s
+        </nombre> -> Cierre (etiqueta de cierre)    
+
+        Existen etiquetas que no tienen contenido (auto-conclusivas)
+           => meta - Pasa información de metadatos al navegador
+           => img
+           => br
+-->
+<html lang="en">
+
+<!-- Contiene información para que el navegador sepa CÓMO renderizar (mostrar) -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitalers - Clase 01</title>
+
+    <!-- 
+        SEO - Search Engine Optimization (Posicionamiento Web)
+        Proceso de optimizar un sitio para mejorar su visibilidad en los motores de búsqueda
+    -->
+</head>
+
+<!-- Contiene información para que el navegador sepa QUÉ renderizar (mostrar) -->
+
+<body>
+
+    <h1>Clase 01</h1>
+
+    <h2>Etiquetas h1-6 - Títulos</h2>
+    <!-- 
+        ¿Qué significa una etiqueta HTML? == ¿Cuál es el significado semántico de la etiqueta?
+            -> HTML
+            -> No me importa cómo se ve
+            -> Comunicación con el navegador
+
+        ¿Cómo se ve una etiqueta HTML?
+            -> CSS
+            -> No me importa qué significa la etiqueta
+            -> Comunicación con el usuario
+            -> Estilos por defecto == Todo navegador web aplica CSS a las etiquetas HTML que encuentra para ayudar en la programación inicial
+
+    -->
+    <h1>Título 1</h1> <!-- Título más importante de la página. Solo debe haber uno por página -->
+    <h2>Título 2</h2>
+    <h3>Título 3</h3>
+    <h4>Título 4</h4>
+    <h5>Título 5</h5>
+    <h6 style="color: blue; font-size: 48px">Título 6</h6>
+
+    <h2>Etiquetas de texto</h2>
+    <p>
+        La etiqueta p se utiliza cuando queremos poner párrafos.
+    </p>
+    <p>
+        Lorem <strong style="font-weight: normal;">ipsum dolor,</strong> sit amet consectetur adipisicing elit. Amet a
+        consequuntur consequatur
+        praesentium expedita
+        similique at iste omnis ratione, <em>excepturi sapiente</em> modi mollitia assumenda ipsa eaque officiis,
+        doloremque
+        <span style="text-decoration: underline;">dignissimos nihil.</span>
+    </p>
+    <span>No más de 3/4 palabras</span>
+
+    <h2>Listas</h2>
+    <h3>Ordenadas</h3>
+    <p>Se usan cuando el orden de los elementos de la lista importa</p>
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ol>
+    <h3>Desordenadas</h3>
+    <p>Se usan cuando el orden de los elementos de la lista NO importa</p>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+</body>
+
+</html>
