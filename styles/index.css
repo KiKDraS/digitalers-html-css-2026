@@ -1,0 +1,80 @@
+/*
+    Esto es un comentario en CSS
+*/
+
+/*
+    CSS - Cambiar la visual de x elemento en el HTML al que la hoja de estilos (el archivo CSS) está vinculada
+
+    Estructura del Lenguaje
+        selector {
+            propiedad: valor;
+        }
+        propiedad - QUÉ quiero modificar del selector
+        valor - CÓMO quiero modificar esa propiedad del selector    
+
+
+    Selector - Herramienta que permite indicar qué elemento modificar
+        => Selectores básicos
+            -> id (#nombre-del-id) - indica que quiero modificar el elemento que dentro de su atributo id tenga el nombre del selector
+            -> clase (.nombre-de-la-clase) - indica que quiero modificar el/los elemento/s que dentro de su atributo class tenga el nombre del selector
+            -> etiqueta - Indicar que voy a modificar todas las etiquetas cuyo nombre corresponda con el selector
+        => Selectores compuestos - Se crea combinando Selectores básicos y/u otros Selectores compuestos
+
+    Flujo de trabajo de CSS - Permite resolver conflictos al momento de aplicar propiedades
+        => Herencia - Los elementos reciben los estilos CSS aplicados a su contenedor padre
+        => Importancia - Los elementos reciben los estilos CSS aplicados a su padre mas cercano
+        => Especificidad - Valor arbitral que implementa CSS para resolver conflicto de propiedades
+            => Mayor valor de especificidad, más relevante el estilo a aplicar
+                => Cuanto menos elementos seleccione un selector, más grande el valor de especificidad
+        => * Orden de lectura - Cuando el valor de Especificidad no resuelve el conflicto  
+            -> El último estilo leído es el aplicado
+*/
+
+/*
+    Selectores de etiqueta
+*/
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    color: dodgerblue;
+    text-decoration: underline;
+}
+
+ul {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*
+    Selector de clase
+*/
+.titulo {
+    text-decoration: underline;
+}
+
+.green {
+    color: green;
+}
+
+.texto1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.texto {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*
+    Selector de id
+*/
+#parrafo-css {
+    font-size: 18px;
+    /*tamaño de la letra*/
+    line-height: 1.2;
+    /* inter lineado*/
+}
+
+#titulo {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

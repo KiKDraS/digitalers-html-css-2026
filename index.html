@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Etiqueta contenedora (etiqueta padre) del contenido sobre CÓMO renderizar -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitalers</title>
+    <!-- 
+        rel -> Qué tipo de elemento vincular
+        href -> Dónde está el elemento a vincular (rutas)
+    -->
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/body.css">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+
+    <!-- <style>
+        
+    </style> -->
+</head>
+
+<!-- Etiqueta padre (etiqueta contenedora) del contenido sobre QUÉ renderizar -->
+
+<body>
+    <h1 class="titulo">Clase 01</h1>
+
+    <h2>HTML</h2>
+    <p class="green texto texto1">
+        HTML es el lenguaje que permite estructurar el contenido de la página. Comunicación con el navegador
+    </p>
+    <ul>
+        <li>Valor semántico de la etiqueta: Información que el navegador recibe para entender cuál es el contenido</li>
+    </ul>
+
+    <!-- 
+        Estructura de una etiqueta
+
+        <nombre atributo> -> Apertura
+            Contenido -> Pueden ser otras etiquetas HTML
+        </nombre> -> Cierre  
+        
+        Etiqueta auto-conclusivas
+            => No tienen contenido
+            => <nombre atributos>
+    -->
+
+    <h2 id="otro-elemento-con-id">CSS (Cascading Style Sheets - Hojas de estilo en cascada)</h2>
+    <!-- <h2 style="color: blue;">CSS (Cascading Style Sheets - Hojas de estilo en cascada)</h2> -->
+    <p id="parrafo-css">
+        CSS permite modificar la visual. Comunicación con el usuario
+    </p>
+    <h3>Tres formas de agregar CSS</h3>
+    <ul class="texto" id="titulo">
+        <li>CSS inline - Agrear un atributo (style) a la etiqueta para indicar los estilos CSS</li>
+        <li>CSS interno - Utilizar la etiqueta style para agregar estilos CSS dentro del documento HTML.
+            <ul>
+                <li class="green">Se agrega dentro del head</li>
+                <li>El contenido es código CSS</li>
+                <li>No es común el uso de los estilos internos. Pero puede ser relevante en casos específicos</li>
+            </ul>
+        </li>
+        <li>CSS externo - Agregar archivos de CSS y vincularlos a nuestro documento HTML</li>
+    </ul>
+
+    <h2>Tipos de Ruta</h2>
+    <p>
+        Elemento que utilizamos para indicar al navegador dónde encontrar el archivo que necesitamos
+    </p>
+    <ul>
+        <li>Relativas - /styles/index.css - Tienen el camino ACORTADO que el navegador tiene que hacer para llegar hasta
+            el elemento que
+            necesitamos. Se utilizan para trabajar con elementos de nuestro proyecto
+            <ul>
+                <li>No pueden llevar a elementos fuera del proyecto</li>
+                <li>El navegador arranca su camino desde mi proyecto (root)
+                    <ol>
+                        <li>¿Cuál es el archivo en el que voy a crear la ruta? - index.html</li>
+                        <li>En relación al root del proyecto. ¿Dónde se encuentra el archivo en el que voy a escribir la
+                            ruta? - El index.html se encuentra en el root del proyecto</li>
+                        <li>¿A qué archivo queremos ir? - index.css</li>
+                        <li>En relación al root del proyecto. ¿Dónde se encuentra el archivo al que quiero llegar? - El
+                            archivo index.css se encuentra en la carpeta styles. La carpeta styles se encuentra en el
+                            root</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Absolutas - https://www.google.com - Tienen todo el camino completo que el navegador debe hacer para llegar
+            al objetivo. Se utilizan para trabajar con elementos que no se encuentran en nuestro proyecto (elementos que
+            están en internet)</li>
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+body {
+    background-color: bisque;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url("../images/bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /*
+        Rutas relativas
+            => 1. ¿Cuál es el archivo en el que voy a crear la ruta? - body.css
+            => 2. En relación al root del proyecto. ¿Dónde se encuentra el archivo en el que voy a escribir la ruta? - body.css se encuentra dentro la carpeta styles. La carpeta styles se encuentra en el root
+            => 3. ¿A qué archivo queremos ir? - bg.svg
+            => 4. En relación al root del proyecto. ¿Dónde se encuentra el archivo al que quiero llegar? - bg.svg se encuentra dentro de la carpeta images. La carpeta images se encuentra en el root
+    */
+}
