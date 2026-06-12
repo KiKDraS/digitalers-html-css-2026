@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitalers</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <header>
+        <h1>Clase 03</h1>
+        <!-- nav del header contiene la navegación principal del sitio -->
+        <nav aria-label="Navegación principal del sitio">
+            <a href="index.html">Home</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section id="html">
+            <h2>HTML</h2>
+            <p>Hypertext Markup Language (Lenguaje de Marcado de Hipertexto). <strong>Creado en 1993</strong> y
+                mantenido por la
+                <strong>W3C (World Wide Web Consortium)</strong> y <strong>WHATWG (Web Hypertext Application Technology
+                    Working Group)</strong>
+            </p>
+            <h3>Documentación</h3>
+            <ul>
+                <li>
+                    <strong>Standard actual: HTML5</strong> -
+                    <!-- 
+                        Etiqueta a === Elemento de Navegación
+                            -> href - Recibe la ruta a la que debe navegar el usuario
+                            -> target - Permite indicar cómo se va a realizar la navegación. "_blank" abre en otra pestaña
+                            -> rel - Indica la relación entre los elementos
+                                -> noopener - Ayuda a prevenir ataques de seguridad impidiendo que la nueva página redireccione a una URL falsa con JavaScript
+                                -> noreferrer - Idem noopener, pero además, evita que la página abierta sepa que el usuario llego desde nuestra página
+        
+                    -->
+                    <a href="https://html.spec.whatwg.org/multipage/" target="_blank"
+                        rel="noopener noreferrer">Documentación
+                        oficial del standard</a>
+                </li>
+                <li>
+                    <strong>Centro de capacitación de la W3C</strong> - <a href="https://www.w3schools.com/"
+                        target="_blank" rel="noopener noreferrer">W3School</a>
+                </li>
+                <li>
+                    <strong>Herramienta de validación</strong> - <a href="https://validator.w3.org/" target="_blank"
+                        rel="noopener noreferrer">Validador de HTML de la W3C</a>
+                </li>
+                <li>
+                    <a href="https://lenguajehtml.com/html/introduccion/tabla-periodica-html5/" target="_blank"
+                        rel="noopener noreferrer">Tabla
+                        periódica de las etiquetas HTML</a>
+                    <ul>
+                        <li>Creada por el youtuber <a href="https://www.youtube.com/@ManzDev" target="_blank"
+                                rel="noopener noreferrer">ManzDev</a> </li>
+                        <li>
+                            <strong>Importante</strong> - Existen pequeñas discrepancias entre la información del
+                            youtuber y el standard. Revisar la documentación oficial
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id="etiquetas-semanticas">
+            <h2>Etiquetas Semánticas</h2>
+            <!-- 
+                SEO (Search Engine Optimization) - Posicionamiento Web
+            -->
+            <p>
+                Son etiquetas contenedoras que permiten ordenar el código HTML
+            </p>
+            <h3>Imprescindibles</h3>
+            <ul>
+                <li>header - Contiene todo lo relacionado a la identidad de la página y la identidad del usuario
+                    conectado
+                    (si
+                    existe la posibilidad de hacer login)</li>
+                <li>nav - Contiene elementos de navegación. En HTML, un elemento de navegación se representa con la
+                    etiqueta
+                    a.
+                    No todo elemento a genera una "barra de navegación"
+                </li>
+                <li>main - Contiene todo lo relacionado con el contenido de la página. <span>NO DEBE HABER MÁS DE UN
+                        MAIN
+                        VISIBLE EN UN DOCUMENTO HTML</span></li>
+                <li>footer - Contiene toda la información legal de la página</li>
+            </ul>
+            <h3>Ocasionales</h3>
+            <ul>
+                <li>section - Representa una sección del contenido principal. No puede haber section sin etiqueta
+                    h(2-6)
+                </li>
+                <li>article - Representa contenido adicional que puede ser entendido fuera del contexto de mi sitio web
+                    <ul>
+                        <li>Noticias de las páginas de diarios de noticia</li>
+                        <li>Post de los blogs</li>
+                        <li>Tarjetas de producto</li>
+                    </ul>
+                </li>
+                <li>aside - Permite agregar contenido relacionado al contenido principal, pero que puede no estar</li>
+                <li>figure - Permite vincular una imagen con un texto usando figcaption</li>
+            </ul>
+            <!-- Simulación de article para una página de noticias -->
+            <article headingoffset="1">
+                <header>
+                    <h1>Título del articulo</h1>
+                </header>
+                <section>
+                    <h2>Subtitulo</h2>
+                </section>
+                <footer>
+                    <span>Autor: Pepe</span>
+                </footer>
+            </article>
+        </section>
+        <section id="rutas" class="rutas">
+            <h2>Rutas</h2>
+            <ul>
+                <li>Relativas - Se arman en relación al root del proyecto. Se usan solo para trabajar con elementos que
+                    se
+                    encuentran dentro del proyecto</li>
+                <li>Absolutas - Contienen todo el camino que el navegador tiene que hacer para llegar al elemento
+                    deseado.
+                    Se usan con elementos fuera del proyecto</li>
+            </ul>
+        </section>
+        <section id="imagenes">
+            <h2>Imágenes</h2>
+            <!-- 
+                src - La ruta a la imagen
+                alt - Texto alternativo cuando la imagen no se muestra. Fundamental para la accesibilidad
+            -->
+            <img src="https://cdn.pixabay.com/photo/2016/11/19/22/25/html5-1841458_1280.png" alt="logo html5">
+            <figure>
+                <img src="https://cdn.pixabay.com/photo/2016/11/19/22/25/html5-1841458_1280.png" alt="logo html5">
+                <figcaption>Imagen creada por Pepito</figcaption>
+            </figure>
+            <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.pixabay.com/photo/2016/11/19/22/25/html5-1841458_1280.png" alt="logo html5">
+            </a>
+        </section>
+        <aside>
+            <h2>Índice</h2>
+            <!-- Navegación por los section de la página -->
+            <nav aria-label="Navegación de la página">
+                <!-- Es posible "forzar" la ruta utilizando el atributo id -->
+                <a href="#html">HTML</a>
+                <a href="#etiquetas-semanticas">Etiquetas Semánticas</a>
+                <a href="#rutas">Rutas</a>
+                <a href="#imagenes">Imágenes</a>
+            </nav>
+        </aside>
+    </main>
+    <footer>
+        <span>&copy; Copyright - Digitalers 2026</span>
+    </footer>
+</body>
+
+</html>

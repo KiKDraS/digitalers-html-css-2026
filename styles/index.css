@@ -1,0 +1,57 @@
+/*
+    CSS - Lenguaje de Selectores
+        => ID - Modificamos el elemento cuyo atributo id corresponda con el selector (#id)
+        => Clase - Modificamos el/los elemento/s cuyo atributo class corresponda con el selector (.class)
+        => Etiqueta - Modificamos los elementos cuyo nombre corresponda con el selector (nombre-de-etiqueta)
+
+    selector {
+        propiedad: valor;
+    }    
+
+    Reglas de Trabajo
+        => Herencia - Los elementos reciben los estilos aplicados a su contenedor padre
+        => Importancia - Los elementos reciben los estilos aplicados a su contenedor padre más cercano
+        => Especificidad - Valor arbitrario utilizado por CSS para resolver conflictos
+            -> Cuantos menos elementos modifique el selector, más su valor de especificidad
+        => *Orden de Lectura    
+            -> Solo aplica si la especificidad es la misma
+            -> Se aplica el último estilo leído
+
+    Tipo de Unidades de Medida
+        => Herramienta que el navegador utiliza para sacar la cuenta del tamaño que una propiedad debe tener        
+            -> Absolutas - Con las absolutas, el navegador aplica una igualdad
+                -> px -> width: 150px;
+                    -> La propiedad width es 150px
+            -> Relativas - Con las relativas, el navegador aplica una ecuación
+                -> % -> width: 50%;
+                    -> La propiedad width es = (ancho del elemento contenedor * 50%)px
+                -> em
+                -> rem
+                -> vw | vh
+                -> dvw | dvh 
+*/
+
+/*
+    Selector de ID
+*/
+#rutas {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/*
+    Selector de clase
+*/
+.rutas {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*
+    Selector de etiqueta
+*/
+section {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    width: 150px;
+}
