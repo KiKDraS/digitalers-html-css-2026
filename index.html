@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"> -->
+
+    <title>Digitalers</title>
+</head>
+
+<body>
+    <header>
+        <h1>Clase 04</h1>
+    </header>
+    <main>
+        <section>
+            <h2>CSS</h2>
+            <p>
+                CSS (Cascading Style Sheets) es un lenguaje de selectores pensado para dar estilos a los elementos de
+                nuestro HTML
+            </p>
+            <h3>Selectores</h3>
+            <ul>
+                <li>Simples
+                    <ul>
+                        <li><strong>ID</strong> - Modificamos el elemento cuyo atributo id corresponda con el selector
+                            (#id)</li>
+                        <li><strong>Clase</strong> - Modificamos el/los elemento/s cuyo atributo class corresponda con
+                            el selector (.class)</li>
+                        <li><strong>Elemento</strong> - Modificamos los elementos cuyo nombre corresponda con el
+                            selector (nombre-de-etiqueta)</li>
+                        <li>Selector Universal (*) - Permite modificar todos los elementos HTML</li>
+                    </ul>
+                </li>
+                <li>Compuestos - Se crea utilizando selectores simples y/u otros selectores compuestos
+                    <ul>
+                        <li>Grupal - Permite aplicar el mismo valor a la misma propiedad en varios selectores</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Reglas de Trabajo</h3>
+            <ul>
+                <li><strong>Herencia</strong> - Los elementos reciben los estilos aplicados a su contenedor padre</li>
+                <li><strong>Importancia</strong> - Los elementos reciben los estilos aplicados a su contenedor padre más
+                    cercano</li>
+                <li><strong>Especificidad</strong> - Valor arbitrario utilizado por CSS para resolver conflictos
+                    <ul>
+                        <li>Cuantos menos elementos modifique el selector, más su valor de especificidad</li>
+                    </ul>
+                </li>
+                <li><strong>* Orden de lectura</strong>
+                    <ul>
+                        <li>Solo aplica si la especificidad es la misma</li>
+                        <li>Se aplica el último estilo leído</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Tipo de Elemento</h3>
+            <p>
+                Cuando hacemos CSS, tenemos que pensar a los elementos del HTML como si fueran cajas (Box Model)
+            </p>
+            <p>
+                Cuando trabajamos con CSS, podemos definir características de caja. Los navegadores, aplican estilos CSS
+                por defecto. Es posible hablar de <strong>Tipos de Elemento</strong>
+            </p>
+            <p>
+                Los <strong>Tipos de Elemento</strong> son una serie de reglas de CSS que le otorgan características a
+                la caja
+            </p>
+            <ul>
+                <li>Elemento de Bloque
+                    <ul>
+                        <li>Ocupa el 100% del ancho de su contenedor. Sin importar el tamaño del contenido</li>
+                        <li>Fuerza un salto de línea</li>
+                        <li>Se le puede modificar ancho(width) y alto(height)</li>
+                    </ul>
+                </li>
+                <li>Elemento de Línea
+                    <ul>
+                        <li>Ocupan sólo el tamaño de su contenido</li>
+                        <li>No fuerzan salto de línea</li>
+                        <li>No se puede modificar width ni height</li>
+                    </ul>
+                </li>
+                <li>Elemento de Línea-Bloque
+                    <ul>
+                        <li>Ocupan sólo el tamaño de su contenido</li>
+                        <li>No fuerzan salto de línea</li>
+                        <li>Se le puede modificar ancho(width) y alto(height)</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Tipo de Unidades de Medida</h3>
+            <p>Herramienta que el navegador utiliza para sacar la cuenta del tamaño que una propiedad debe tener</p>
+            <ul>
+                <li>Absolutas - Con las absolutas, el navegador aplica una igualdad
+                    <ul>
+                        <li><strong>px</strong> - width: 150px; -> La propiedad width es 150px</li>
+                    </ul>
+                </li>
+                <li>Relativas - Con las relativas, el navegador aplica una ecuación
+                    <ul>
+                        <li><strong>Porcentaje(%)</strong> - tamaño = (ancho/alto del contenedor padre * %)px</li>
+                        <li><strong>em</strong></li>
+                        <li><strong>rem</strong></li>
+                        <li><strong>Viewport</strong>
+                            <ul>
+                                <li>vw | vh</li>
+                                <li>dvw | dvh</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Imágenes</h3>
+            <img src="https://cdn.pixabay.com/photo/2016/11/19/22/25/html5-1841458_1280.png" alt="logo html5"
+                width="75">
+            <img src="https://cdn.pixabay.com/photo/2016/11/19/22/25/html5-1841458_1280.png" alt="logo html5"
+                width="75">
+            <ul>
+                <li>Extensión webp, avif o svg</li>
+                <li>Busquemos optimizar la cantidad de imágenes</li>
+                <li>Si tenemos que poner muchas, consideremos el uso de banco de imágenes</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Formularios</h2>
+            <p>
+                En HTML, un formulario es una herramienta que permite recolectar datos. En HTML solo recolectamos los
+                datos.
+            </p>
+            <ul>
+                <li>¿Qué datos necesito? - HTML y qué etiquetas y atributos voy a utilizar</li>
+                <li>¿Qué quiero hacer con esos datos? - Lenguajes de Programación (PHP, JS, etc) y cómo voy a usar esos
+                    datos</li>
+            </ul>
+
+            <form>
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" pattern="[A-z ]{2,50}" required placeholder="Juan Perez">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Comentario:</label>
+                    <textarea name="message" id="message" name="message" cols="30" rows="10" required
+                        placeholder="Escribe tu texto aquí..." maxlength="250"></textarea>
+                </div>
+
+                <!-- 
+                    Validar
+                        -> Técnica que permite reducir las posibilidades de ingreso de datos a aquellos datos que tienen sentido para lo que necesito hacer
+                        -> Atributo type es un tipo de validación
+                        -> Atributo pattern permite validar el texto más específicamente usando Expresiones Regulares
+                            -> Herramienta que permite validar la estructura del texto
+                        -> Atributo required impide que el formulario se envíe si el input/textarea está vacío    
+                -->
+
+                <!-- 
+                    type="submit" -> Este botón va a enviar el formulario
+                        -> enviar el formulario == realizar la acción para la cual el formulario fue pensado 
+                -->
+                <button type="submit">Enviar</button>
+                <!-- <input type="submit" value="Enviar"> -->
+            </form>
+        </section>
+    </main>
+    <footer>
+        <span>&copy; Digitalers - 2026</span>
+    </footer>
+</body>
+
+</html>

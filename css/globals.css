@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/*
+    Permite sobreescribir estilos de CSS que vienen por defecto
+*/
+* {
+    margin: 0;
+    /* padding: 0; */
+}
+
+/* h1 {
+    font-family: 'Courier New', Courier, monospace
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+} */
+
+body {
+    padding: 8px;
+}
+
+/*
+    Selector Grupal
+*/
+h1,
+h2,
+h3 {
+    /*
+        font-family: 'Courier New', Courier, monospace;
+
+        Modifico la tipografía dentro de mi documento HTML, utilizando las tipografías que se encuentran instaladas en el SO del usuario que visita mi Sitio Web
+    */
+
+    /*
+        CDN (Content Delivery Network)
+            -> Una red de servidores que almacenan archivos
+    */
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    /* 
+        margin: 8px; - Aplica el margen a los 4 lados 
+
+        margin - Distancia entre los bordes externos del contenedor y otros contenedores
+    */
+    margin-bottom: 8px;
+
+    padding: 8px;
+
+    /*
+        padding - Distancia entre los bordes internos del contenedor y su contenido
+    */
+    border: 2px solid black;
+}
+
+ul,
+ol {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
