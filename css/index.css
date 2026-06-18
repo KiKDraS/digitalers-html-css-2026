@@ -1,0 +1,57 @@
+/*
+    Formulario
+*/
+
+input,
+textarea {
+    display: block;
+    margin-top: 4px;
+}
+
+.form-group {
+    width: fit-content;
+    margin-bottom: 8px;
+}
+
+textarea {
+    resize: none;
+}
+
+form {
+    width: fit-content;
+    padding: 16px;
+    margin: 16px auto;
+    /*
+        contenedor form es contenido de del contenedor main
+
+        auto 
+            -> Navegador (width del main (contenedor) - width del form (contenido)) / 2
+                -> left = resultado
+                -> right = resultado 
+    */
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: black; */
+    background-color: rgba(250, 235, 215, 0.35);
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.form-btn {
+    width: 100%;
+    color: aliceblue;
+    background-color: rgb(19, 153, 19);
+    border: 1px solid rgb(19, 153, 19);
+    padding: 4px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.internet {
+    width: 50%;
+    min-width: 350px;
+    max-width: 500px;
+}
