@@ -13,96 +13,9 @@
 
 <body>
     <header>
-        <h1>Clase 05</h1>
+        <h1>Clase 06</h1>
     </header>
     <main>
-        <section>
-            <h2>Formularios</h2>
-            <p>
-                En HTML, un formulario es una herramienta que permite recolectar datos. En HTML solo recolectamos los
-                datos.
-            </p>
-
-            <h3>Qué necesito para trabajar con formularios?</h3>
-            <ul>
-                <li>¿Qué datos necesito? - HTML y qué etiquetas y atributos voy a utilizar</li>
-                <li>¿Qué quiero hacer con esos datos? - Lenguajes de Programación (PHP, JS, etc) y cómo voy a usar esos
-                    datos</li>
-            </ul>
-
-
-            <!-- 
-                action -> Ruta al archivo de Lenguaje Backend (o URL del servicio externo que va a usar los datos del formulario) que indica qué quiero que pase con los datos recolectados por el formulario
-
-                method -> Permite indicar cómo van a viajar los datos obtenidos por el formulario
-                    -> GET - Los datos son visibles en la barra de navegación
-                        -> Se recomienda solo para formularios de búsqueda
-                    -> POST - Los datos no son visibles desde el Browser
-            -->
-
-            <form action="https://formspree.io/f/mwvjjyjg" method="post">
-                <div class="form-group inline-block">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" pattern="[A-z ]{2,50}" required placeholder="Juan Perez">
-                </div>
-
-                <div class="form-group inline-block">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="email@example.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Comentario:</label>
-                    <textarea name="message" id="message" name="message" cols="35" rows="10" required
-                        placeholder="Escribe tu texto aquí..." maxlength="250"></textarea>
-                </div>
-
-                <!-- 
-                    Validar
-                        -> Técnica que permite reducir las posibilidades de ingreso de datos a aquellos datos que tienen sentido para lo que necesito hacer
-                        -> Atributo type es un tipo de validación
-                        -> Atributo pattern permite validar el texto más específicamente usando Expresiones Regulares
-                            -> Herramienta que permite validar la estructura del texto
-                        -> Atributo required impide que el formulario se envíe si el input/textarea está vacío    
-                -->
-
-                <!-- 
-                    type="submit" -> Este botón va a enviar el formulario
-                        -> enviar el formulario == realizar la acción para la cual el formulario fue pensado 
-                -->
-                <button type="submit" class="form-btn">Enviar</button>
-                <!-- <input type="submit" value="Enviar"> -->
-            </form>
-
-            <form>
-                <h3>¿Qué mascotas tenes?</h3>
-                <label for="gato">Gato:</label>
-                <input type="checkbox" name="mascotas" id="gato">
-                <label for="perro">Perro:</label>
-                <input type="checkbox" name="mascotas" id="perro">
-
-                <h3>Seleccione género</h3>
-                <label for="femenino">Femenino:</label>
-                <input type="radio" name="genero" id="femenino">
-                <label for="masculino">Masculino:</label>
-                <input type="radio" name="genero" id="masculino">
-                <label for="no-binario">No Binario:</label>
-                <input type="radio" name="genero" id="no-binario">
-            </form>
-        </section>
-        <section>
-            <h2>Servidores (Hosting)</h2>
-            <p>
-                Un <strong>servidor</strong> es una <i>"super computadora"</i> que está diseñada para estar encendida
-                las 24 horas del día, los 7 días de la semana, y utiliza una conexión a internet de altísima de
-                velocidad.
-            </p>
-            <p>
-                Los servidores están pensados para almacenar archivos y entregarlos a cualquier <strong>cliente</strong>
-                que se los pida en cualquier momento.
-            </p>
-            <img src="images/internet.png" alt="representación de internet" class="internet" />
-        </section>
         <section>
             <h2>Git / GitHub</h2>
             <section>
