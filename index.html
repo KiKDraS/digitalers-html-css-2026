@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/selector-descendente.css">
 
     <title>Digitalers</title>
 </head>
@@ -65,6 +66,284 @@
                     </li>
                 </ul>
             </section>
+            <section>
+                <h3>¿Cómo funciona GitHub Pages?</h3>
+                <p>GitHub Pages es un servicio de GitHub que permite alojar sitios web estáticos directamente desde un
+                    repositorio de GitHub. Es ideal para alojar páginas personales, blogs, o sitios web de proyectos.
+                    Funciona de la siguiente manera:</p>
+                <ol>
+                    <li><strong>Repositorio</strong>: Crea un repositorio en GitHub.</li>
+                    <li><strong>Contenido</strong>: Añade archivos HTML, CSS, y JavaScript al repositorio.</li>
+                    <li><strong>Configuración</strong>: En las opciones del repositorio, habilita GitHub Pages.</li>
+                    <li><strong>Despliegue</strong>: GitHub Pages generará automáticamente una URL donde estará alojado
+                        tu
+                        sitio web (por ejemplo, <code>https://tuusuario.github.io/turepositorio</code>).</li>
+                    <li><strong>Actualizaciones</strong>: Cada vez que hagas un push a la rama configurada para GitHub
+                        Pages
+                        (<code>main</code> o <code>gh-pages</code>), el sitio se actualizará automáticamente.</li>
+                </ol>
+
+                <h4>Tutoriales</h4>
+                <p class="disclaimer">Material correspondiente al canal de YouTube <a
+                        href="https://www.youtube.com/watch?v=L_lWQZNhN7w" target="_blank">Bluuweb</a> </p>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=L_lWQZNhN7w" target="_blank">¿Cómo subir mi primer
+                            repositorio a GitHub?</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=tFr0Vg1q9Eg" target="_blank">Ramas o Branch, Uniones o
+                            Merge</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=wL8gCda3pG4" target="_blank">GitHub Pages</a></li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h2>Multimedia (video, audio, iframe)</h2>
+            <ul>
+                <li><a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-audio/" target="_blank"
+                        rel="noopener noreferrer">Etiqueta audio</a></li>
+                <li><a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-video/" target="_blank"
+                        rel="noopener noreferrer">Etiqueta video</a></li>
+                <li><a href="https://lenguajehtml.com/html/multimedia/formatos-multimedia/" target="_blank"
+                        rel="noopener noreferrer">Formatos soportados</a></li>
+                <li><a href="https://lenguajehtml.com/html/multimedia/etiqueta-html-iframe/" target="_blank"
+                        rel="noopener noreferrer">Etiqueta iframe</a>
+                    <h3>Atributos</h3>
+                    <ul>
+                        <li><b>title</b> - Fundamental para accesibilidad. Símil alt de img</li>
+                        <li><b>allow</b> - Declara permisos de Hardware y Seguridad
+                            <ul>
+                                <li><i>accelerometer</i> - Permite al video detectar si el usuario gira o mueve su
+                                    dispositivo
+                                    físico (móvil/tablet).</li>
+                                <li><i>autoplay</i> - Le da permiso al video para reproducirse automáticamente
+                                    (aunque
+                                    los
+                                    navegadores modernos suelen bloquearlo si el usuario no ha interactuado con la
+                                    página primero).</li>
+                                <li><i>clipboard-write</i> - Permite que, al hacer clic en "Copiar enlace" dentro
+                                    del
+                                    video,
+                                    este pueda escribir en el portapapeles del usuario.</li>
+                                <li><i>encrypted-media</i> - Permite reproducir contenido protegido por derechos de
+                                    autor
+                                    (DRM).</li>
+                                <li><i>gyroscope</i> - Permite el uso del giroscopio del dispositivo (esencial para
+                                    videos
+                                    interactivos en 360°).</li>
+                                <li><i>picture-in-picture</i> - Permite al usuario "desprender" el video en una
+                                    mini-ventana
+                                    flotante mientras navega por otra pestaña.</li>
+                                <li><i>web-share</i> - Permite abrir el menú nativo del sistema operativo para
+                                    compartir
+                                    el
+                                    video en redes sociales o apps.</li>
+                            </ul>
+                        </li>
+                        <li><b>referrerpolicy</b> - Políticas de Privacidad
+                            <ul>
+                                <li><i>strict-origin-when-cross-origin</i> - Es una medida de privacidad de
+                                    seguridad de red. Le dice al navegador que, al cargar el video de YouTube, solo
+                                    le
+                                    envíe a Google la dirección general de tu sitio web (el dominio, por ejemplo:
+                                    tusitio.com) y oculte la ruta interna exacta de la página donde estás parado
+                                    para
+                                    proteger los datos de tus usuarios.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wL8gCda3pG4?si=IavjXTb7eEvGXQgv"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h2>Tablas</h2>
+
+            <!-- https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics -->
+            <table>
+                <thead>
+                    <!-- tr == table row == fila de tabla -->
+                    <tr>
+                        <!-- th == table header == encabezado de tabla. Representa una columna -->
+                        <th>Logo</th>
+                        <th>Nombre del Lenguaje</th>
+                        <th>Nivel de habilidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- td == table data == dato de tabla. Representa una columna -->
+                        <td><img src="https://cdn.pixabay.com/photo/2016/11/19/22/25/html5-1841458_640.png"
+                                alt="logo html5" class="table-logo"></td>
+                        <td>HTML 5</td>
+                        <td>Avanzado</td>
+                    </tr>
+                    <tr>
+                        <!-- td == table data == dato de tabla. Representa una columna -->
+                        <td><img src="https://cdn.pixabay.com/photo/2016/11/19/23/00/css3-1841590_1280.png"
+                                alt="logo css3" class="table-logo"></td>
+                        <td>CSS3</td>
+                        <!-- <td colspan="2">Intermedio</td> -->
+                        <td rowspan="2">Intermedio</td>
+                    </tr>
+                    <tr>
+                        <!-- td == table data == dato de tabla. Representa una columna -->
+                        <td><img src="https://cdn.pixabay.com/photo/2017/03/30/17/41/javascript-2189147_960_720.png"
+                                alt="logo js" class="table-logo"></td>
+                        <td>JavaScript</td>
+                        <!-- <td>Principiante</td> -->
+                    </tr>
+                </tbody>
+                <!-- 
+                    <tfoot></tfoot> - Se utiliza cuando la tabla tiene que mostrar totales
+                -->
+            </table>
+        </section>
+        <section id="css">
+            <h2>CSS</h2>
+            <section class="reglas-trabajo">
+                <h3>Reglas de trabajo</h3>
+                <ul>
+                    <li><strong>Herencia</strong> - Los elementos reciben los estilos aplicados a su contenedor padre
+                    </li>
+                    <li><strong>Importancia</strong> - Los elementos reciben los estilos aplicados a su contenedor padre
+                        más
+                        cercano</li>
+                    <li><strong>Especificidad</strong> - Valor arbitrario utilizado por CSS para resolver conflictos
+                    </li>
+                    <li><strong>* Orden de lectura</strong>
+                        <ul>
+                            <li>Solo aplica si la especificidad es la misma</li>
+                            <li>Se aplica el último estilo leído</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section class="selectores">
+                <h3>Selectores</h3>
+                <ul>
+                    <li>Básicos
+                        <ul>
+                            <li><strong>ID</strong> - Modificamos el elemento cuyo atributo id corresponda con el
+                                selector
+                                (#id)</li>
+                            <li><strong>Clase</strong> - Modificamos el/los elemento/s cuyo atributo class corresponda
+                                con
+                                el selector (.class)</li>
+                            <li><strong>Elemento</strong> - Modificamos los elementos cuyo nombre corresponda con el
+                                selector (nombre-de-etiqueta)</li>
+                            <li>Selector Universal (*) - Permite modificar todos los elementos HTML</li>
+                        </ul>
+                    </li>
+                    <li>Compuestos - Calculan su valor de especificidad sumando los valores de los selectores que los
+                        componen
+                        <ul>
+                            <li>Grupal - Permite aplicar el mismo valor a la misma propiedad en varios selectores</li>
+                            <li>Selector descendente
+                                <ul>
+                                    <li>Selector de hijo - Un elemento dentro de otro. Sin importar la profundidad del
+                                        árbol
+                                        genealógico</li>
+                                    <li>Selector de hijo directo - Un elemento dentro de otro. Solo debe haber un rango
+                                        de
+                                        profundidad en el árbol genealógico</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>Ejemplos Selector Descendente</h4>
+                <div>
+                    <p>
+                        (1)Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, obcaecati mollitia ut
+                        dolorem
+                        ullam temporibus quae maxime commodi recusandae blanditiis, similique ad illum id optio
+                        necessitatibus quam ducimus error distinctio.
+                    </p>
+                    <section>
+                        <p>
+                            (2)Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem maiores delectus quam
+                            aperiam
+                            sequi corporis repudiandae eligendi atque magnam, aliquam sunt laudantium doloremque fuga?
+                            Aliquid accusamus quasi cum cupiditate debitis!
+                        </p>
+                    </section>
+                </div>
+                <div class="padre">
+                    <p>
+                        (3)Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, obcaecati mollitia ut
+                        dolorem
+                        ullam temporibus quae maxime commodi recusandae blanditiis, similique ad illum id optio
+                        necessitatibus quam ducimus error distinctio.
+                    </p>
+                    <section>
+                        <p>
+                            (4)Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem maiores delectus quam
+                            aperiam
+                            sequi corporis repudiandae eligendi atque magnam, aliquam sunt laudantium doloremque fuga?
+                            Aliquid accusamus quasi cum cupiditate debitis!
+                        </p>
+                    </section>
+                </div>
+
+                <h4 class="specifity-title">Especificidad de los selectores</h4>
+                <p>La Especificidad de un Selector es un cálculo que el navegador hace para saber qué estilo aplicar
+                    cuando
+                    hay un conflicto. Siempre se aplica el estilo declarado con el Selector de valor más alto</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selector</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ID</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Clase</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Etiqueta</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Universal</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section>
+            <h3>CSS Nesting</h3>
+            <p>
+                El CSS Nesting es una característica moderna que permite escribir reglas de estilo unas dentro de
+                otras,
+                imitando la misma estructura jerárquica y visual que tiene tu propio código HTML.
+            </p>
+
+            <h4>Características</h4>
+            <ol>
+                <li>
+                    <strong>Especificidad</strong> - Mientras el selector de referencia (padre del elemento a
+                    modificar)
+                    sea simple, el cálculo de especificidad no se ve modificado
+                </li>
+                <li>
+                    <strong>Soporte</strong> - El CSS Nesting fue oficialmente soportado por todos los navegadores
+                    en el
+                    año 2023. No funciona con versiones de navegadores anteriores. Podemos saber más sobre esto
+                    utilizando <a href="https://caniuse.com/" target="_blank" rel="noopener noreferrer">caniuse.com</a>
+                </li>
+            </ol>
         </section>
     </main>
     <footer>

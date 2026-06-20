@@ -1,0 +1,87 @@
+/*
+    Selector de hijo (selector selector)
+*/
+
+/*
+    Cálculo de especificidad
+        => selector de clase (.padre): 10
+        => selector de etiqueta (p): 1
+        => especificidad: 10 + 1 = 11
+*/
+/* .padre p {
+    background-color: black;
+    color: white;
+} */
+
+.padre {
+    p {
+        background-color: black;
+        color: white;
+    }
+}
+
+/*
+    Cálculo de especificidad
+        => selector de etiqueta (div): 1
+        => selector de etiqueta (p): 1
+        => especificidad: 1 + 1 = 2
+*/
+div p {
+    background-color: aqua;
+    color: cornflowerblue;
+}
+
+/*
+    Selector de hijo directo (selector>selector)
+*/
+
+/*
+    Cálculo de especificidad
+        => selector de clase (.padre): 10
+        => selector de etiqueta (p): 1
+        => especificidad: 10 + 1 = 11
+*/
+/* .padre>p {
+    background-color: violet;
+    color: greenyellow;
+} */
+
+.padre {
+    &>p {
+        background-color: violet;
+        color: greenyellow;
+    }
+}
+
+/* 
+    .padre *>p {}
+
+    .padre {
+        >p {
+            background-color: violet;
+            color: greenyellow;
+        }
+    } 
+*/
+
+/*
+    Cálculo de especificidad
+        => selector de etiqueta (div): 1
+        => selector de etiqueta (p): 1
+        => especificidad: 1 + 1 = 2
+*/
+div>p {
+    background-color: blanchedalmond;
+    color: chocolate;
+}
+
+#css>h2 {
+    text-decoration: underline;
+}
+
+.selectores ul {
+    background-color: antiquewhite;
+    width: 50%;
+    max-width: 600px;
+    margin: 16px auto;
+}

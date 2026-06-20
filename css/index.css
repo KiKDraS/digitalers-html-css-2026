@@ -1,0 +1,68 @@
+/*
+    Header
+*/
+header {
+    height: 150px;
+    background-image: url("https://cdn.pixabay.com/photo/2024/06/11/13/57/code-8823282_960_720.png");
+    background-repeat: no-repeat;
+    /*background-size: contain; - Quiero que la imagen entre AL COMPLETO en su contenedor*/
+    background-size: cover;
+    /* Quiero que la image CUBRA todo el contenedor*/
+    background-position: 25% 25%;
+    /* left-right top-bottom   */
+}
+
+h1 {
+    text-align: center;
+    line-height: 150px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: whitesmoke;
+    padding: 0;
+}
+
+.disclaimer {
+    font-size: 12px;
+    font-style: italic;
+    color: gray;
+}
+
+/*
+    Tabla
+*/
+
+.table-logo {
+    width: 32px;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    /*width: 70%;
+    min-width: 450px;
+    max-width: 600px;*/
+    width: clamp(450px, 70%, 600px);
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+th {
+    background-color: bisque;
+}
+
+td {
+    background-color: cadetblue;
+    color: aliceblue;
+    font-weight: 500;
+}
+
+/*
+    Especificidad
+*/
+.specifity-title {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
