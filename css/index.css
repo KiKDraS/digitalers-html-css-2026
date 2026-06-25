@@ -5,64 +5,130 @@ header {
     height: 150px;
     background-image: url("https://cdn.pixabay.com/photo/2024/06/11/13/57/code-8823282_960_720.png");
     background-repeat: no-repeat;
-    /*background-size: contain; - Quiero que la imagen entre AL COMPLETO en su contenedor*/
     background-size: cover;
-    /* Quiero que la image CUBRA todo el contenedor*/
     background-position: 25% 25%;
-    /* left-right top-bottom   */
+
+    .bg {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+            padding: 0;
+        }
+
+        a {
+            color: whitesmoke;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+    }
+
 }
 
-h1 {
-    text-align: center;
-    line-height: 150px;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: whitesmoke;
-    padding: 0;
-}
-
-.disclaimer {
-    font-size: 12px;
-    font-style: italic;
-    color: gray;
-}
 
 /*
-    Tabla
+    Section
 */
-
-.table-logo {
-    width: 32px;
+section {
+    padding-top: 16px;
 }
 
-table {
-    border-collapse: collapse;
-    text-align: center;
-    /*width: 70%;
-    min-width: 450px;
-    max-width: 600px;*/
-    width: clamp(450px, 70%, 600px);
-}
-
-th,
-td {
-    border: 1px solid black;
-    padding: 8px;
-}
-
-th {
-    background-color: bisque;
-}
-
-td {
-    background-color: cadetblue;
-    color: aliceblue;
-    font-weight: 500;
-}
 
 /*
     Especificidad
 */
-.specifity-title {
+.specificity-title {
     margin-top: 16px;
     margin-bottom: 8px;
+}
+
+.specificity-table {
+    border-collapse: collapse;
+    text-align: center;
+    width: clamp(450px, 70%, 600px);
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    th {
+        background-color: bisque;
+    }
+
+    td {
+        background-color: cadetblue;
+        color: aliceblue;
+        font-weight: 500;
+    }
+}
+
+/*
+    Box Modeling
+*/
+.box-modeling {
+    width: 150px;
+    height: 150px;
+    /*Por defecto: auto*/
+    padding: 8px;
+    border: 1px solid blue;
+    background-color: blue;
+    margin: 16px auto;
+
+    .child {
+        width: 95%;
+        height: 50%;
+        margin: auto;
+        background-color: aqua;
+    }
+}
+
+.cartel {
+    height: 150px;
+    background-color: cadetblue;
+    color: aliceblue;
+    line-height: 150px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px black;
+    /* eje x | eje y | difuminado | color */
+}
+
+/*
+    Box Modeling - lista
+*/
+
+.lista-flex {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+
+    &>li {
+        width: 30%;
+        padding: 8px;
+        border: 1px solid burlywood;
+        background-color: burlywood;
+        margin: 8px 0;
+        border-radius: 16px;
+        box-shadow: 4px 4px 8px 4px gray;
+        /*
+            eje x | eje y | difuminado | crecimiento | color
+        */
+
+
+        h3 {
+            text-align: center;
+        }
+    }
 }

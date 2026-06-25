@@ -1,0 +1,84 @@
+.contenido {
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    border: 1px solid black;
+    color: aliceblue;
+}
+
+.contenedor,
+.contenedor-column,
+.contenedor-gap {
+    width: 500px;
+    height: 500px;
+    margin: 16px auto;
+    border: 1px solid black;
+
+    display: flex;
+
+}
+
+.contenedor {
+    flex-direction: row;
+
+    /*
+        Posicionar los elementos en el Eje Principal
+            -> Podemos dejar espacios entre los elementos
+                -> space-between
+                -> space-around
+                -> space-evenly
+    */
+    justify-content: space-around;
+
+    /*
+        Posicionar elementos en el Eje Secundario
+    */
+    align-items: center;
+}
+
+.contenedor-gap {
+    flex-direction: row;
+
+    /*
+        Posicionar los elementos en el Eje Principal
+            -> Podemos dejar espacios entre los elementos
+                -> space-between
+                -> space-around
+                -> space-evenly
+    */
+    justify-content: center;
+
+    /*
+        Gap - Dejar espacios entre los elementos en el Eje Principal
+    */
+    gap: 16px;
+
+    /*
+        Posicionar elementos en el Eje Secundario
+    */
+    align-items: center;
+}
+
+.contenedor-column {
+    flex-direction: column;
+
+    /*
+        Posicionar los elementos en el Eje Principal
+            -> Podemos dejar espacios entre los elementos
+                -> space-between
+                -> space-around
+                -> space-evenly
+    */
+    justify-content: space-around;
+
+    /*
+        Posicionar elementos en el Eje Secundario
+    */
+    align-items: center;
+}
+
+.contenedor-interno {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
