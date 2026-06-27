@@ -1,10 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*
+    Representa el Documento HTML (habitación con la puerta abierta)
+*/
+:root {
+    /*
+        -- -> La forma en que CSS entiende que vamos a crear una variable (quiero crear una caja)
+        color-primary -> Etiqueta para reconocer qué hay dentro de la caja
+        #2F80ED -> El valor guardado dentro de la caja
+    */
+    --color-primary: #2F80ED;
+    --color-neutral-text: #828282;
+    --color-neutral-text-dark: #4F4F4F;
+    --color-neutral: #C4C4C4;
+    --color-surface: #F3EBEB;
+    --color-bg: #FFF;
+
+    --border-radius: 12px;
+}
+
+/*
+    Utility Class
+*/
+.titulo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    /*
+        24px / 16px = 1.5rem
+    */
+}
+
+.flex-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+/*
+    Representa el Documento HTML en el Navegador
+
+html {}
+*/
 
 main,
 footer {

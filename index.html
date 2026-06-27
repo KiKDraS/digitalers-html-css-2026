@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/globals.css">
-    <link rel="stylesheet" href="css/flexbox.css">
-    <link rel="stylesheet" href="css/unidades-de-medida.css">
+    <link rel="stylesheet" href="css/components/skills.css">
     <link rel="stylesheet" href="css/index.css">
 
     <title>Digitalers</title>
@@ -16,291 +15,194 @@
 <body>
     <header>
         <div class="bg">
-            <h1>Clase 07</h1>
-            <nav>
-                <a href="#reglas">Reglas de Trabajo</a>
-                <a href="#Selectores">Selectores</a>
-                <a href="#nesting">CSS Nesting</a>
-                <a href="#flex">Display Flex</a>
-                <a href="#medidas">Unidades de Medida</a>
-            </nav>
+            <h1>Clase 08</h1>
         </div>
     </header>
     <main>
-        <h2>CSS</h2>
-        <section id="reglas">
-            <h3>Reglas de trabajo</h3>
-            <ul>
-                <li><strong>Herencia</strong> - Los elementos reciben los estilos aplicados a su contenedor padre
-                </li>
-                <li><strong>Importancia</strong> - Los elementos reciben los estilos aplicados a su contenedor padre
-                    más
-                    cercano</li>
-                <li><strong>Especificidad</strong> - Valor arbitrario utilizado por CSS para resolver conflictos
-                </li>
-                <li><strong>* Orden de lectura</strong>
-                    <ul>
-                        <li>Solo aplica si la especificidad es la misma</li>
-                        <li>Se aplica el último estilo leído</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section id="selectores">
-            <h3>Selectores</h3>
-            <ul>
-                <li>Básicos
-                    <ul>
-                        <li><strong>ID</strong> - Modificamos el elemento cuyo atributo id corresponda con el
-                            selector
-                            (#id)</li>
-                        <li><strong>Clase</strong> - Modificamos el/los elemento/s cuyo atributo class corresponda
-                            con
-                            el selector (.class)</li>
-                        <li><strong>Elemento</strong> - Modificamos los elementos cuyo nombre corresponda con el
-                            selector (nombre-de-etiqueta)</li>
-                        <li>Selector Universal (*) - Permite modificar todos los elementos HTML</li>
-                    </ul>
-                </li>
-                <li>Compuestos - Calculan su valor de especificidad sumando los valores de los selectores que los
-                    componen
-                    <ul>
-                        <li>Grupal - Permite aplicar el mismo valor a la misma propiedad en varios selectores</li>
-                        <li>Selector descendente
-                            <ul>
-                                <li>Selector de hijo - Un elemento dentro de otro. Sin importar la profundidad del
-                                    árbol
-                                    genealógico</li>
-                                <li>Selector de hijo directo - Un elemento dentro de otro. Solo debe haber un rango
-                                    de
-                                    profundidad en el árbol genealógico</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <section>
+            <section>
+                <h2>Diseño Responsivo</h2>
+                <p>Es un enfoque de diseño web que busca crear sitios web que se adapten a diferentes tamaños de
+                    pantalla y
+                    dispositivos, como computadoras de escritorio, tabletas y teléfonos móviles.</p>
 
-            <h4 class="specificity-title">Especificidad de los selectores</h4>
-            <p>La Especificidad de un Selector es un cálculo que el navegador hace para saber qué estilo aplicar
-                cuando
-                hay un conflicto. Siempre se aplica el estilo declarado con el Selector de valor más alto</p>
+                <a href="https://lenguajecss.com/css/responsive-web-design/que-es/" target="_blank"
+                    rel="noopener noreferrer">Más info</a>
+            </section>
 
-            <table class="specificity-table">
-                <thead>
-                    <tr>
-                        <th>Selector</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ID</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>Clase</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>Etiqueta</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>Universal</td>
-                        <td>0</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section id="nesting">
-            <h3>CSS Nesting</h3>
-            <p>
-                El CSS Nesting es una característica moderna que permite escribir reglas de estilo unas dentro de
-                otras,
-                imitando la misma estructura jerárquica y visual que tiene tu propio código HTML.
-            </p>
-
-            <h4>Características</h4>
-            <ol>
-                <li>
-                    <strong>Especificidad</strong> - Mientras el selector de referencia (padre del elemento a
-                    modificar)
-                    sea simple, el cálculo de especificidad no se ve modificado
-                </li>
-                <li>
-                    <strong>Soporte</strong> - El CSS Nesting fue oficialmente soportado por todos los navegadores
-                    en el
-                    año 2023. No funciona con versiones de navegadores anteriores. Podemos saber más sobre esto
-                    utilizando <a href="https://caniuse.com/" target="_blank" rel="noopener noreferrer">caniuse.com</a>
-                </li>
-            </ol>
-        </section>
-        <section id="box-model">
-            <h2>Box Modeling</h2>
-            <p>En CSS, el Box Modeling es una forma de pensar la estructura para realizar los diseños basada en cajas
-            </p>
-            <p class="cartel">las propiedades de box modeling no se heredan</p>
-            <ul class="lista-flex">
-                <li>
-                    <h3>Propiedades de la caja (cómo se forma la caja)</h3>
-                    <ul>
-                        <li>width</li>
-                        <li>height</li>
-                        <li>border</li>
-                        <li>margin</li>
-                        <li>padding</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Forma en que se calcula el espacio ocupado por la caja</h3>
-                    <ul>
-                        <li>content-box (por defecto): El espacio final ocupado por la caja es el resultado de la suma
-                            de su contenido, width, padding, margin y border</li>
-                        <li>border-box: El espacio final ocupado por la caja es igual al width/height. Se reduce el
-                            espacio del contenido</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Características de la caja (tipo de display)</h3>
-                    <ul>
-                        <li>Elemento de línea (display: inline)</li>
-                        <li>Elemento de bloque (display: block)</li>
-                        <li>Elemento de línea-bloque (display: inline-block)</li>
-                        <li>Display de "control de posición" - Se utilizan para modificar el layout de los elementos
-                            contenidos
-                            <ul>
-                                <li>Elementos flexibles (display: flex)</li>
-                                <li>Elementos de grilla (display: grid)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="box-modeling">
-                <div class="child"></div>
-            </div>
-        </section>
-        <section id="flex">
-            <h3>Display Flex (flexbox)</h3>
-            <p>Flexbox es un modelo de diseño unidimensional que permite alinear y distribuir espacio entre
-                elementos en una
-                interfaz de usuario.</p>
-
-            <img src="images/flex.png" alt="esquema-flexbox">
-
-            <h4>Direction row (por defecto)</h4>
-            <div class="contenedor">
-                <div class="contenido">1</div>
-                <div class="contenido">2</div>
-                <div class="contenido">3</div>
-            </div>
-
-            <h4>Gap</h4>
-            <div class="contenedor-gap">
-                <div class="contenido">1</div>
-                <div class="contenido">2</div>
-                <div class="contenido">3</div>
-            </div>
-
-            <h4>Direction column</h4>
-            <div class="contenedor-column">
-                <div class="contenido">1</div>
-                <div class="contenido">2</div>
-                <div class="contenido">3</div>
-            </div>
-
-            <h4>"Multi dirección"</h4>
-            <div class="contenedor-column">
-                <div class="contenido">1</div>
-                <div class="contenedor-interno">
-                    <div class="contenido">2</div>
-                    <div class="contenido">4</div>
-                    <div class="contenido">5</div>
-                </div>
-                <div class="contenido">3</div>
-            </div>
-        </section>
-        <section id="medidas">
-            <h2>Unidades de Medida</h2>
-            <p>Son la herramienta que el navegador utiliza para calcular el tamaño que los distintos elementos deben
-                tener
-            </p>
-
-            <ul>
-                <li>Absolutas - El tamaño es igual a la Medida
-                    <ul>
-                        <li>px</li>
-                    </ul>
-                </li>
-                <li>Relativas - El tamaño es el resultado del cálculo correspondiente a la medida utilizada
-                    <ul>
-                        <li>% - tamaño = ancho/alto del contenedor padre * %. Tamaño se calcula en relación al
-                            contenedor
-                            padre</li>
-                        <li><a href="https://lenguajecss.com/css/unidades-css/relativas-viewport/" target="_blank"
-                                rel="noopener noreferrer">vw/vh</a>
-                            - tamaño = ancho(vw)/alto(vh) de la ventana del navegador. Tamaño se calcula en
-                            relación
-                            al navegador
-                            <ul>
-                                <a href="https://lenguajecss.com/css/unidades-css/relativas-viewport/#unidades-de-viewport-variables"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <h3>Unidades variables de viewport</h3>
-                                </a>
-                                <li>svw - ancho más chico del viewport</li>
-                                <li>lvw - ancho más largo del viewport</li>
-                                <li>dvw - ancho dinámico del viewport</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="https://lenguajecss.com/css/unidades-css/relativas/#la-unidad-em" target="_blank"
-                                rel="noopener noreferrer">em</a>
-                            - tamaño = alto de la tipografía del elemento actual * em. Tamaño depende de la
-                            tipografía
-                            del elemento actual. Tener presente que la propiedad font-size es heredable
-                        </li>
-                        <li>
-                            <a href="https://lenguajecss.com/css/unidades-css/relativas/#la-unidad-rem-root-em"
-                                target="_blank" rel="noopener noreferrer">rem</a>
-                            - tamaño = alto de la tipografía del root (navegador). Tamaño depende de la tipografía
-                            del
-                            navegador
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <p class="cartel">
-                Se recomienda % para contenedores internos y viewport para contenedores externos.
-            </p>
-            <p class="cartel">Se recomienda rem para tipografías</p>
-
-            <div class="porcentaje">Porcentaje</div>
-            <div class="dvw">Dynamic Viewport Width</div>
-            <div class="fixed-width">
-                <div class="porcentaje">Porcentaje</div>
-                <div class="dvw">Dynamic Viewport Width</div>
-            </div>
-            <div class="contenedor-dvw contenedor">
-                <div class="contenido">1</div>
-                <div class="contenido">2</div>
-                <div class="contenido">3</div>
-            </div>
-
-            <div class="font-container">
-                <p class="em">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis beatae expedita vel dicta. Eos
-                    excepturi aut perspiciatis cumque impedit unde nostrum sit. Quaerat ullam eos impedit odio dolores
-                    provident.
+            <section>
+                <h2>Mobile First</h2>
+                <p>Es una estrategia de diseño que prioriza la creación de experiencias óptimas para dispositivos
+                    móviles
+                    antes
+                    de adaptarse a pantallas más grandes. En lugar de diseñar primero para computadoras de escritorio y
+                    luego
+                    ajustar el diseño para dispositivos móviles, se comienza con un diseño simple y funcional para
+                    móviles,
+                    y luego se expande a pantallas más grandes.</p>
+                <h3>Breakpoint</h3>
+                <p>Una medida que se utiliza para decirle al navegador que tiene que cambiar el layout (disposición) de
+                    los
+                    elementos. Se utilizan para indicar cómo queremos que se vea nuestra web en un dispositivo mobile,
+                    una
+                    tablet o un monitor de pc</p>
+                <h4>Breakpoints más comunes</h4>
+                <ul>
+                    <li>hasta 768px - celulares y tablets pequeñas</li>
+                    <li>hasta 900px - tablets</li>
+                    <li>desde 1200px - monitores</li>
+                </ul>
+                <h3>Custom Properties (variables de CSS)</h3>
+                <p>Son una herramienta que permite crear cajas que guardan un valor que se va a reutilizar a largo de
+                    todo
+                    el proyecto.
+                    Son útiles para mantener la consistencia en el diseño y facilitar los cambios globales.</p>
                 </p>
-            </div>
+                <h3>Utility class</h3>
+                <p>Una clase de CSS pensada no para un elemento en particular sino para aplicar una serie de propiedades
+                    a
+                    varios elementos</p>
 
-            <div class="font-container">
-                <p class="rem">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis beatae expedita vel dicta. Eos
-                    excepturi aut perspiciatis cumque impedit unde nostrum sit. Quaerat ullam eos impedit odio dolores
-                    provident.
-                </p>
-            </div>
+                <h3>Ejemplo de Componente Responsivo</h3>
+                <section class="skills-container">
+                    <h3 class="titulo">Skills</h3>
+                    <div class="skills flex-column">
+                        <div class="flex-column">
+                            <div class="skill">
+                                <h4 class="titulo">HTML5</h4>
+                                <progress value="50" max="100"></progress>
+                            </div>
+                            <div class="skill">
+                                <h4 class="titulo">CSS</h4>
+                                <progress value="50" max="100"></progress>
+                            </div>
+                        </div>
+                        <div class="flex-column">
+                            <div class="skill">
+                                <h4 class="titulo">JS</h4>
+                                <progress value="50" max="100"></progress>
+                            </div>
+                            <div class="skill">
+                                <h4 class="titulo">React</h4>
+                                <progress value="50" max="100"></progress>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Figma</h2>
+                <p>Herramienta para hacer diseños</p>
+                <!-- width="560" height="315" -->
+                <iframe src="https://www.youtube.com/embed/z-DuwE2R84U?si=95kodfZfQeVnHOHG" title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <a href="https://lenguajecss.com/css/modelo-de-cajas/dimensiones/#la-propiedad-aspect-ratio"
+                    target="_blank" rel="noopener noreferrer">aspect-ratio</a>
+            </section>
+
+            <section>
+                <h2>Colores</h2>
+                <ol>
+                    <li>
+                        <h3>HEX (Hexadecimal): El formato compacto</h3>
+                        <p>Es el sistema más tradicional en la web. Utiliza un código de 6 caracteres precedido por un
+                            hash
+                            (<code>#</code>).</p>
+
+                        <h4>Cómo funciona:</h4>
+                        <p>Es un sistema de base 16 (números del 0 al 9 y letras de la A a la F). Se divide en tres
+                            pares
+                            estrictos: <code>#RRGGBB</code> (Rojo, Verde, Azul).</p>
+                        <ul>
+                            <li><code>00</code> significa apagado total.</li>
+                            <li><code>FF</code> significa intensidad máxima.</li>
+                        </ul>
+
+                        <h5>Ejemplo en CSS:</h5>
+                        <pre><code>color: #ff0000; /* Rojo puro */</code></pre>
+
+                        <h4>Para qué sirve en Frontend:</h4>
+                        <p>Es ideal para copiar y pegar rápidamente desde herramientas de diseño como Figma. Ocupa muy
+                            poco
+                            espacio en tu archivo CSS.</p>
+                    </li>
+
+                    <li>
+                        <h3>RGB (Red, Green, Blue): La mezcla de luz</h3>
+                        <p>Este formato representa el color de forma aditiva, tal como lo hace el hardware del monitor
+                            combinando bombillas de luz roja, verde y azul.</p>
+
+                        <h4>Cómo funciona:</h4>
+                        <p>Utiliza una función matemática <code>rgb(R, G, B)</code> donde pasas tres valores separados
+                            por
+                            comas (o espacios en CSS moderno). Cada valor va del <code>0</code> (apagado) al
+                            <code>255</code> (intensidad máxima).
+                        </p>
+
+                        <h5>Ejemplo en CSS:</h5>
+                        <pre><code>color: rgb(255, 0, 0); /* Rojo puro */</code></pre>
+
+                        <h4>Para qué sirve en Frontend:</h4>
+                        <p>Es mucho más legible para un programador que el código HEX. Si ves
+                            <code>rgb(250, 250, 250)</code>, sabes instantáneamente que es casi blanco porque los tres
+                            canales de luz están casi al máximo.
+                        </p>
+                    </li>
+
+                    <li>
+                        <h3>RGBA: El RGB con canales de transparencia</h3>
+                        <p>Es exactamente igual al RGB tradicional, pero añade un cuarto elemento: el Canal Alfa (Alpha
+                            channel), que controla la opacidad.</p>
+
+                        <h4>Cómo funciona:</h4>
+                        <p>El cuarto valor es un número decimal que va del <code>0.0</code> (completamente
+                            transparente/invisible) al <code>1.0</code> (completamente opaco).</p>
+
+                        <aside aria-label="Nota de CSS moderno">
+                            <p><strong>Nota de CSS moderno:</strong> Hoy en día ya no es obligatorio escribir
+                                <code>rgba()</code>. La función estándar <code>rgb()</code> ya acepta la opacidad usando
+                                una
+                                barra diagonal: <code>rgb(255 0 0 / 0.5)</code>.
+                            </p>
+                        </aside>
+
+                        <h5>Ejemplo en CSS:</h5>
+                        <pre><code>background-color: rgba(0, 0, 0, 0.5); </code></pre>
+
+                        <h4>Para qué sirve en Frontend:</h4>
+                        <p>Es el rey absoluto cuando necesitas crear efectos de capas, como un fondo oscuro difuminado
+                            detrás de un modal (overlay) o texturas sutiles.</p>
+                    </li>
+
+                    <li>
+                        <h3>HSL (Hue, Saturation, Lightness): El formato humano</h3>
+                        <p>Este formato es el más querido por los desarrolladores que buscan programar de forma
+                            inteligente.
+                            En lugar de pensar en "luz mezclada", piensa en cómo los humanos percibimos el color.</p>
+
+                        <h4>Cómo funciona:</h4>
+                        <p>Utiliza la función <code>hsl(H, S, L)</code> con tres valores muy lógicos:</p>
+                        <ul>
+                            <li><strong>Hue (Tono):</strong> Se mide en grados (<code>0</code> a <code>360</code>) como
+                                una
+                                rueda de colores. El 0 es rojo, el 120 es verde, el 240 es azul.</li>
+                            <li><strong>Saturation (Saturación):</strong> Se mide en porcentaje. <code>0%</code> es gris
+                                grisáceo (sin color) y <code>100%</code> es el color en su máxima viveza.</li>
+                            <li><strong>Lightness (Luminosidad):</strong> Se mide en porcentaje. <code>0%</code> es
+                                negro
+                                absoluto, <code>100%</code> es blanco absoluto, y <code>50%</code> es el color puro.
+                            </li>
+                        </ul>
+
+                        <h5>Ejemplo en CSS:</h5>
+                        <pre><code>color: hsl(0, 100%, 50%);</code></pre>
+                    </li>
+                </ol>
+            </section>
         </section>
     </main>
     <footer>

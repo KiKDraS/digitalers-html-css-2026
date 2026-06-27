@@ -11,7 +11,10 @@ header {
     .bg {
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.3);
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        /* background-color: #00000080; */
+        background-color: hsla(0, 0%, 0%, 0.502);
+        /* background-color: hsl(hue, saturation, lightness); */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -21,114 +24,87 @@ header {
         h1 {
             text-align: center;
             color: whitesmoke;
+            /* color: var(--bg-mobile); */
             padding: 0;
         }
-
-        a {
-            color: whitesmoke;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-    }
-
-}
-
-
-/*
-    Section
-*/
-section {
-    padding-top: 16px;
-}
-
-
-/*
-    Especificidad
-*/
-.specificity-title {
-    margin-top: 16px;
-    margin-bottom: 8px;
-}
-
-.specificity-table {
-    border-collapse: collapse;
-    text-align: center;
-    width: clamp(450px, 70%, 600px);
-
-    th,
-    td {
-        border: 1px solid black;
-        padding: 8px;
-    }
-
-    th {
-        background-color: bisque;
-    }
-
-    td {
-        background-color: cadetblue;
-        color: aliceblue;
-        font-weight: 500;
     }
 }
 
 /*
-    Box Modeling
+    Representa el bloque de código dentro de la Etiqueta HTML main (habitación con la puerta cerrada)
 */
-.box-modeling {
-    width: 150px;
-    height: 150px;
-    /*Por defecto: auto*/
-    padding: 8px;
-    border: 1px solid blue;
-    background-color: blue;
-    margin: 16px auto;
+main {
+    --bg-mobile: cadetblue;
+    --bg-tablet: lightcoral;
+    --bg-desktop: cornflowerblue;
 
-    .child {
-        width: 95%;
-        height: 50%;
-        margin: auto;
-        background-color: aqua;
-    }
-}
-
-.cartel {
-    height: 150px;
-    background-color: cadetblue;
-    color: aliceblue;
-    line-height: 150px;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px black;
-    /* eje x | eje y | difuminado | color */
-}
-
-/*
-    Box Modeling - lista
-*/
-
-.lista-flex {
-    padding: 0;
-    list-style-type: none;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 16px;
 
-    &>li {
-        width: 30%;
-        padding: 8px;
-        border: 1px solid burlywood;
-        background-color: burlywood;
-        margin: 8px 0;
-        border-radius: 16px;
-        box-shadow: 4px 4px 8px 4px gray;
-        /*
-            eje x | eje y | difuminado | crecimiento | color
-        */
+    &>section {
+        padding: 16px;
+        background-color: var(--bg-mobile);
+    }
 
+    @media (min-width: 900px) {
+        flex-direction: row;
 
-        h3 {
-            text-align: center;
+        &>section {
+            border-radius: var(--border-radius);
+            background-color: var(--bg-tablet);
         }
     }
+
+    @media (min-width: 1200px) {
+        &>section {
+            background-color: var(--bg-desktop);
+        }
+    }
+}
+
+/*
+    Ejemplo tradicional de uso de breakpoint (Mobile First)
+*/
+.contenedor-mobile {
+    /*
+        Todos los estilos para Mobile
+    */
+}
+
+@media (min-width: 900px) {
+    .contenedor-mobile {
+        /*
+            Modificamos las propiedades para Tablets
+        */
+    }
+}
+
+@media (min-width: 1200px) {
+    .contenedor-mobile {
+        /*
+            Modificamos las propiedades para Desktop
+        */
+    }
+}
+
+pre,
+code {
+    width: 100%;
+    background-color: var(--color-surface);
+    padding: 2px;
+    border-radius: 4px;
+}
+
+pre {
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 8px 0;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
 }
