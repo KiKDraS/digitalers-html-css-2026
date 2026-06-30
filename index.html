@@ -108,98 +108,89 @@
                 <h2>Colores</h2>
                 <ol>
                     <li>
-                        <h3>HEX (Hexadecimal): El formato compacto</h3>
+                        <h2>HEX (Hexadecimal): El formato compacto</h2>
                         <p>Es el sistema más tradicional en la web. Utiliza un código de 6 caracteres precedido por un
-                            hash
-                            (<code>#</code>).</p>
+                            hash (<code>#</code>).</p>
 
-                        <h4>Cómo funciona:</h4>
+                        <h3>Cómo funciona:</h3>
                         <p>Es un sistema de base 16 (números del 0 al 9 y letras de la A a la F). Se divide en tres
-                            pares
-                            estrictos: <code>#RRGGBB</code> (Rojo, Verde, Azul).</p>
+                            pares estrictos: <code>#RRGGBB</code> (Rojo, Verde, Azul).</p>
                         <ul>
                             <li><code>00</code> significa apagado total.</li>
                             <li><code>FF</code> significa intensidad máxima.</li>
                         </ul>
 
-                        <h5>Ejemplo en CSS:</h5>
+                        <h3>Ejemplo en CSS:</h3>
                         <pre><code>color: #ff0000; /* Rojo puro */</code></pre>
 
-                        <h4>Para qué sirve en Frontend:</h4>
+                        <h3>Para qué sirve en Frontend:</h3>
                         <p>Es ideal para copiar y pegar rápidamente desde herramientas de diseño como Figma. Ocupa muy
-                            poco
-                            espacio en tu archivo CSS.</p>
+                            poco espacio en tu archivo CSS.</p>
                     </li>
 
                     <li>
-                        <h3>RGB (Red, Green, Blue): La mezcla de luz</h3>
+                        <h2>RGB (Red, Green, Blue): La mezcla de luz</h2>
                         <p>Este formato representa el color de forma aditiva, tal como lo hace el hardware del monitor
                             combinando bombillas de luz roja, verde y azul.</p>
 
-                        <h4>Cómo funciona:</h4>
+                        <h3>Cómo funciona:</h3>
                         <p>Utiliza una función matemática <code>rgb(R, G, B)</code> donde pasas tres valores separados
-                            por
-                            comas (o espacios en CSS moderno). Cada valor va del <code>0</code> (apagado) al
-                            <code>255</code> (intensidad máxima).
-                        </p>
+                            por comas (o espacios en CSS moderno). Cada valor va del <code>0</code> (apagado) al
+                            <code>255</code> (intensidad máxima).</p>
 
-                        <h5>Ejemplo en CSS:</h5>
+                        <h3>Ejemplo en CSS:</h3>
                         <pre><code>color: rgb(255, 0, 0); /* Rojo puro */</code></pre>
 
-                        <h4>Para qué sirve en Frontend:</h4>
+                        <h3>Para qué sirve en Frontend:</h3>
                         <p>Es mucho más legible para un programador que el código HEX. Si ves
                             <code>rgb(250, 250, 250)</code>, sabes instantáneamente que es casi blanco porque los tres
-                            canales de luz están casi al máximo.
-                        </p>
+                            canales de luz están casi al máximo.</p>
                     </li>
 
                     <li>
-                        <h3>RGBA: El RGB con canales de transparencia</h3>
+                        <h2>RGBA: El RGB con canales de transparencia</h2>
                         <p>Es exactamente igual al RGB tradicional, pero añade un cuarto elemento: el Canal Alfa (Alpha
                             channel), que controla la opacidad.</p>
 
-                        <h4>Cómo funciona:</h4>
+                        <h3>Cómo funciona:</h3>
                         <p>El cuarto valor es un número decimal que va del <code>0.0</code> (completamente
                             transparente/invisible) al <code>1.0</code> (completamente opaco).</p>
 
                         <aside aria-label="Nota de CSS moderno">
                             <p><strong>Nota de CSS moderno:</strong> Hoy en día ya no es obligatorio escribir
                                 <code>rgba()</code>. La función estándar <code>rgb()</code> ya acepta la opacidad usando
-                                una
-                                barra diagonal: <code>rgb(255 0 0 / 0.5)</code>.
-                            </p>
+                                una barra diagonal: <code>rgb(255 0 0 / 0.5)</code>.</p>
                         </aside>
 
-                        <h5>Ejemplo en CSS:</h5>
-                        <pre><code>background-color: rgba(0, 0, 0, 0.5); </code></pre>
+                        <h3>Ejemplo en CSS:</h3>
+                        <pre><code>background-color: rgba(0, 0, 0, 0.5); /* Tradicional */
+background-color: rgb(0 0 0 / 0.5);       /* Moderno (50% transparencia) */</code></pre>
 
-                        <h4>Para qué sirve en Frontend:</h4>
+                        <h3>Para qué sirve en Frontend:</h3>
                         <p>Es el rey absoluto cuando necesitas crear efectos de capas, como un fondo oscuro difuminado
                             detrás de un modal (overlay) o texturas sutiles.</p>
                     </li>
 
                     <li>
-                        <h3>HSL (Hue, Saturation, Lightness): El formato humano</h3>
+                        <h2>HSL (Hue, Saturation, Lightness): El formato humano</h2>
                         <p>Este formato es el más querido por los desarrolladores que buscan programar de forma
-                            inteligente.
-                            En lugar de pensar en "luz mezclada", piensa en cómo los humanos percibimos el color.</p>
+                            inteligente. En lugar de pensar en "luz mezclada", piensa en cómo los humanos percibimos el
+                            color.</p>
 
-                        <h4>Cómo funciona:</h4>
+                        <h3>Cómo funciona:</h3>
                         <p>Utiliza la función <code>hsl(H, S, L)</code> con tres valores muy lógicos:</p>
                         <ul>
                             <li><strong>Hue (Tono):</strong> Se mide en grados (<code>0</code> a <code>360</code>) como
-                                una
-                                rueda de colores. El 0 es rojo, el 120 es verde, el 240 es azul.</li>
+                                una rueda de colores. El 0 es rojo, el 120 es verde, el 240 es azul.</li>
                             <li><strong>Saturation (Saturación):</strong> Se mide en porcentaje. <code>0%</code> es gris
                                 grisáceo (sin color) y <code>100%</code> es el color en su máxima viveza.</li>
                             <li><strong>Lightness (Luminosidad):</strong> Se mide en porcentaje. <code>0%</code> es
-                                negro
-                                absoluto, <code>100%</code> es blanco absoluto, y <code>50%</code> es el color puro.
-                            </li>
+                                negro absoluto, <code>100%</code> es blanco absoluto, y <code>50%</code> es el color
+                                puro.</li>
                         </ul>
 
-                        <h5>Ejemplo en CSS:</h5>
-                        <pre><code>color: hsl(0, 100%, 50%);</code></pre>
+                        <h3>Ejemplo en CSS:</h3>
+                        <pre><code>color: hsl(0, 100%, 50%); /* Rojo puro, vivo y con luz media */</code></pre>
                     </li>
                 </ol>
             </section>

@@ -92,6 +92,7 @@ main {
 pre,
 code {
     width: 100%;
+    text-wrap: wrap;
     background-color: var(--color-surface);
     padding: 2px;
     border-radius: 4px;
