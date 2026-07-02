@@ -1,42 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 /*
-    Representa el Documento HTML (habitación con la puerta abierta)
+    @font-face permite agregar una tipografía a nuestra web desde un archivo válido de tipografía
+        - woff, woff2 o ttf (formatos optimizados para web)
+        - Agregamos descriptores
+            - Cómo se llama? (font-family)
+            - Dónde se encuentra? (src)
+            - Qué hacer si la fuente no está disponible? (font-display)
+            - Qué estilos tiene la fuente? (font-style)
 */
-:root {
-    /*
-        -- -> La forma en que CSS entiende que vamos a crear una variable (quiero crear una caja)
-        color-primary -> Etiqueta para reconocer qué hay dentro de la caja
-        #2F80ED -> El valor guardado dentro de la caja
-    */
-    --color-primary: #2F80ED;
-    --color-neutral-text: #828282;
-    --color-neutral-text-dark: #4F4F4F;
-    --color-neutral: #C4C4C4;
-    --color-surface: #F3EBEB;
-    --color-bg: #FFF;
-
-    --border-radius: 12px;
-}
-
-/*
-    Utility Class
-*/
-.titulo {
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-    /*
-        24px / 16px = 1.5rem
-    */
-}
-
-.flex-column {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../assets/fonts/SpaceGrotesk.ttf");
+    font-display: swap;
+    font-style: normal;
 }
 
 * {
@@ -45,11 +20,10 @@
     padding: 0;
 }
 
-/*
-    Representa el Documento HTML en el Navegador
-
-html {}
-*/
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+}
 
 main,
 footer {
@@ -59,8 +33,6 @@ footer {
 h1,
 h2,
 h3 {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
     margin-bottom: 8px;
     padding: 8px;
 }

@@ -1,111 +1,103 @@
-/*
-    Header
-*/
-header {
-    height: 150px;
-    background-image: url("https://cdn.pixabay.com/photo/2024/06/11/13/57/code-8823282_960_720.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 25% 25%;
+body {
+    height: 100dvh;
+    overflow: hidden;
 
-    .bg {
-        width: 100%;
-        height: 100%;
-        /* background-color: rgba(0, 0, 0, 0.5); */
-        /* background-color: #00000080; */
-        background-color: hsla(0, 0%, 0%, 0.502);
-        /* background-color: hsl(hue, saturation, lightness); */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 32px;
-
-        h1 {
-            text-align: center;
-            color: whitesmoke;
-            /* color: var(--bg-mobile); */
-            padding: 0;
-        }
-    }
-}
-
-/*
-    Representa el bloque de código dentro de la Etiqueta HTML main (habitación con la puerta cerrada)
-*/
-main {
-    --bg-mobile: cadetblue;
-    --bg-tablet: lightcoral;
-    --bg-desktop: cornflowerblue;
-
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    &>section {
-        padding: 16px;
-        background-color: var(--bg-mobile);
-    }
+    display: grid;
+    grid-template-areas: "header"
+        "breadcrumb"
+        "body";
 
     @media (min-width: 900px) {
-        flex-direction: row;
-
-        &>section {
-            border-radius: var(--border-radius);
-            background-color: var(--bg-tablet);
-        }
-    }
-
-    @media (min-width: 1200px) {
-        &>section {
-            background-color: var(--bg-desktop);
-        }
+        grid-template-areas: "sidebar header header"
+            "sidebar breadcrumb breadcrumb"
+            "sidebar body body";
     }
 }
 
-/*
-    Ejemplo tradicional de uso de breakpoint (Mobile First)
-*/
-.contenedor-mobile {
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: body;
+
     /*
-        Todos los estilos para Mobile
+        Background
     */
-}
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/19/23/00/css3-1841590_640.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: local;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    color: rgb(194, 219, 241);
 
-@media (min-width: 900px) {
-    .contenedor-mobile {
+    /*
+        Usando overflow
+    */
+    --color-primary: rgb(49, 195, 221);
+    --color-neutral: rgba(187, 185, 185, 0.78);
+
+    overflow-y: auto;
+
+    scroll-behavior: smooth;
+
+    /*
+        Firefox y Standard Oficial 2024
+    */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-neutral);
+    /* pulgar track */
+
+    /*
+        Chrome, Safari y Edge
+    */
+    &::-webkit-scrollbar {
+        width: 4px;
         /*
-            Modificamos las propiedades para Tablets
+            Grosor del pulgar
         */
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--color-neutral);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary);
+        border-radius: 8px;
+
+        /*
+            Simular padding
+        */
+        border: 2px solid var(--color-neutral);
     }
 }
 
-@media (min-width: 1200px) {
-    .contenedor-mobile {
-        /*
-            Modificamos las propiedades para Desktop
-        */
+aside {
+    grid-area: sidebar;
+    display: none;
+
+    @media (min-width: 900px) {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding: 16px;
+
+        h2 {
+            margin-bottom: 8px;
+        }
+
+        a {
+            display: block;
+            width: fit-content;
+            text-decoration: none;
+            color: blue;
+        }
     }
 }
 
-pre,
-code {
-    width: 100%;
-    text-wrap: wrap;
-    background-color: var(--color-surface);
-    padding: 2px;
-    border-radius: 4px;
-}
-
-pre {
-    border-radius: 8px;
-    padding: 8px 16px;
-    margin: 8px 0;
-}
-
-iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: none;
+.breadcrumb {
+    grid-area: breadcrumb;
 }

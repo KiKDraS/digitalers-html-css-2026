@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/globals.css">
-    <link rel="stylesheet" href="css/components/skills.css">
+    <link rel="stylesheet" href="css/conceptos/grid.css">
+    <link rel="stylesheet" href="css/conceptos/overflow.css">
     <link rel="stylesheet" href="css/index.css">
 
     <title>Digitalers</title>
@@ -15,193 +16,130 @@
 <body>
     <header>
         <div class="bg">
-            <h1>Clase 08</h1>
+            <h1>Clase 09</h1>
         </div>
     </header>
     <main>
-        <section>
-            <section>
-                <h2>Diseño Responsivo</h2>
-                <p>Es un enfoque de diseño web que busca crear sitios web que se adapten a diferentes tamaños de
-                    pantalla y
-                    dispositivos, como computadoras de escritorio, tabletas y teléfonos móviles.</p>
-
-                <a href="https://lenguajecss.com/css/responsive-web-design/que-es/" target="_blank"
-                    rel="noopener noreferrer">Más info</a>
-            </section>
-
-            <section>
-                <h2>Mobile First</h2>
-                <p>Es una estrategia de diseño que prioriza la creación de experiencias óptimas para dispositivos
-                    móviles
-                    antes
-                    de adaptarse a pantallas más grandes. En lugar de diseñar primero para computadoras de escritorio y
-                    luego
-                    ajustar el diseño para dispositivos móviles, se comienza con un diseño simple y funcional para
-                    móviles,
-                    y luego se expande a pantallas más grandes.</p>
-                <h3>Breakpoint</h3>
-                <p>Una medida que se utiliza para decirle al navegador que tiene que cambiar el layout (disposición) de
-                    los
-                    elementos. Se utilizan para indicar cómo queremos que se vea nuestra web en un dispositivo mobile,
-                    una
-                    tablet o un monitor de pc</p>
-                <h4>Breakpoints más comunes</h4>
-                <ul>
-                    <li>hasta 768px - celulares y tablets pequeñas</li>
-                    <li>hasta 900px - tablets</li>
-                    <li>desde 1200px - monitores</li>
-                </ul>
-                <h3>Custom Properties (variables de CSS)</h3>
-                <p>Son una herramienta que permite crear cajas que guardan un valor que se va a reutilizar a largo de
-                    todo
-                    el proyecto.
-                    Son útiles para mantener la consistencia en el diseño y facilitar los cambios globales.</p>
+        <section id="box-model">
+            <h2>Box Modeling</h2>
+            <p>En CSS, el Box Modeling es una forma de pensar la estructura para realizar los diseños basada en cajas
+            </p>
+            <ul>
+                <li>Propiedades de la caja (cómo se forma la caja)
+                    <ul>
+                        <li>width</li>
+                        <li>height</li>
+                        <li>border</li>
+                        <li>margin</li>
+                        <li>padding</li>
+                    </ul>
+                </li>
+                <li>Forma en que se calcula el espacio ocupado por la caja
+                    <ul>
+                        <li>content-box (por defecto): El espacio final ocupado por la caja es el resultado de la suma
+                            de su contenido, width, padding, margin y border</li>
+                        <li>border-box: El espacio final ocupado por la caja es igual al width</li>
+                    </ul>
+                </li>
+                <li>Características de la caja (tipo de display)
+                    <ul>
+                        <li>Elemento de línea (display: inline)</li>
+                        <li>Elemento de bloque (display: block)</li>
+                        <li>Elemento de línea-bloque (display: inline-block)</li>
+                        <ul>Display de "control de posición" - Se utilizan para modificar el layout de los elementos
+                            contenidos
+                            <li>Elementos flexibles (display: flex)</li>
+                            <li>Elementos de grilla (display: grid)</li>
+                        </ul>
+                    </ul>
+                </li>
+                <h3>Display Grid (Grillas)</h3>
+                <p>Permite crear una estructura bidimensional de filas y columnas para el diseño de elementos web. Al
+                    aplicar esta propiedad a un elemento padre, sus hijos se organizan siguiendo la cuadrícula definida.
+                    Esto permite un control preciso sobre la posición y el tamaño de los elementos dentro del diseño.
                 </p>
-                <h3>Utility class</h3>
-                <p>Una clase de CSS pensada no para un elemento en particular sino para aplicar una serie de propiedades
-                    a
-                    varios elementos</p>
-
-                <h3>Ejemplo de Componente Responsivo</h3>
-                <section class="skills-container">
-                    <h3 class="titulo">Skills</h3>
-                    <div class="skills flex-column">
-                        <div class="flex-column">
-                            <div class="skill">
-                                <h4 class="titulo">HTML5</h4>
-                                <progress value="50" max="100"></progress>
-                            </div>
-                            <div class="skill">
-                                <h4 class="titulo">CSS</h4>
-                                <progress value="50" max="100"></progress>
-                            </div>
-                        </div>
-                        <div class="flex-column">
-                            <div class="skill">
-                                <h4 class="titulo">JS</h4>
-                                <progress value="50" max="100"></progress>
-                            </div>
-                            <div class="skill">
-                                <h4 class="titulo">React</h4>
-                                <progress value="50" max="100"></progress>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </section>
+                <h4>Ejemplos</h4>
+                <h5>Declarar filas y columnas - La grilla NO ocupa todo el contenedor</h5>
+                <div class="grid row-col">
+                    <div class="contenido">1</div>
+                    <div class="contenido">2</div>
+                    <div class="contenido">3</div>
+                    <div class="contenido">4</div>
+                    <div class="contenido">5</div>
+                </div>
+                <h5>Declarar filas y columnas - La grilla ocupa todo el contenedor</h5>
+                <div class="grid row-col-full">
+                    <div class="contenido">1</div>
+                    <div class="contenido">2</div>
+                    <div class="contenido">3</div>
+                    <div class="contenido">4</div>
+                    <div class="contenido">5</div>
+                </div>
+                <h5>Grid Área</h5>
+                <p>Permite pensar los diseños en áreas de trabajo</p>
+                <div class="grid grid-area">
+                    <div class="contenido elemento-en-sidebar ">1</div>
+                    <div class="contenido elemento-en-body">2</div>
+                    <div class="contenido elemento-en-breadcrumb ">3</div>
+                    <div class="contenido elemento-en-header">4</div>
+                </div>
+            </ul>
         </section>
-        <section>
-            <section>
-                <h2>Figma</h2>
-                <p>Herramienta para hacer diseños</p>
-                <!-- width="560" height="315" -->
-                <iframe src="https://www.youtube.com/embed/z-DuwE2R84U?si=95kodfZfQeVnHOHG" title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                <a href="https://lenguajecss.com/css/modelo-de-cajas/dimensiones/#la-propiedad-aspect-ratio"
-                    target="_blank" rel="noopener noreferrer">aspect-ratio</a>
-            </section>
-
-            <section>
-                <h2>Colores</h2>
-                <ol>
-                    <li>
-                        <h2>HEX (Hexadecimal): El formato compacto</h2>
-                        <p>Es el sistema más tradicional en la web. Utiliza un código de 6 caracteres precedido por un
-                            hash (<code>#</code>).</p>
-
-                        <h3>Cómo funciona:</h3>
-                        <p>Es un sistema de base 16 (números del 0 al 9 y letras de la A a la F). Se divide en tres
-                            pares estrictos: <code>#RRGGBB</code> (Rojo, Verde, Azul).</p>
-                        <ul>
-                            <li><code>00</code> significa apagado total.</li>
-                            <li><code>FF</code> significa intensidad máxima.</li>
-                        </ul>
-
-                        <h3>Ejemplo en CSS:</h3>
-                        <pre><code>color: #ff0000; /* Rojo puro */</code></pre>
-
-                        <h3>Para qué sirve en Frontend:</h3>
-                        <p>Es ideal para copiar y pegar rápidamente desde herramientas de diseño como Figma. Ocupa muy
-                            poco espacio en tu archivo CSS.</p>
-                    </li>
-
-                    <li>
-                        <h2>RGB (Red, Green, Blue): La mezcla de luz</h2>
-                        <p>Este formato representa el color de forma aditiva, tal como lo hace el hardware del monitor
-                            combinando bombillas de luz roja, verde y azul.</p>
-
-                        <h3>Cómo funciona:</h3>
-                        <p>Utiliza una función matemática <code>rgb(R, G, B)</code> donde pasas tres valores separados
-                            por comas (o espacios en CSS moderno). Cada valor va del <code>0</code> (apagado) al
-                            <code>255</code> (intensidad máxima).
-                        </p>
-
-                        <h3>Ejemplo en CSS:</h3>
-                        <pre><code>color: rgb(255, 0, 0); /* Rojo puro */</code></pre>
-
-                        <h3>Para qué sirve en Frontend:</h3>
-                        <p>Es mucho más legible para un programador que el código HEX. Si ves
-                            <code>rgb(250, 250, 250)</code>, sabes instantáneamente que es casi blanco porque los tres
-                            canales de luz están casi al máximo.
-                        </p>
-                    </li>
-
-                    <li>
-                        <h2>RGBA: El RGB con canales de transparencia</h2>
-                        <p>Es exactamente igual al RGB tradicional, pero añade un cuarto elemento: el Canal Alfa (Alpha
-                            channel), que controla la opacidad.</p>
-
-                        <h3>Cómo funciona:</h3>
-                        <p>El cuarto valor es un número decimal que va del <code>0.0</code> (completamente
-                            transparente/invisible) al <code>1.0</code> (completamente opaco).</p>
-
-                        <aside aria-label="Nota de CSS moderno">
-                            <p><strong>Nota de CSS moderno:</strong> Hoy en día ya no es obligatorio escribir
-                                <code>rgba()</code>. La función estándar <code>rgb()</code> ya acepta la opacidad usando
-                                una barra diagonal: <code>rgb(255 0 0 / 0.5)</code>.
-                            </p>
-                        </aside>
-
-                        <h3>Ejemplo en CSS:</h3>
-                        <pre><code>background-color: rgba(0, 0, 0, 0.5); /* Tradicional */
-background-color: rgb(0 0 0 / 0.5); /* Moderno (50% transparencia) */</code></pre>
-
-                        <h3>Para qué sirve en Frontend:</h3>
-                        <p>Es el rey absoluto cuando necesitas crear efectos de capas, como un fondo oscuro difuminado
-                            detrás de un modal (overlay) o texturas sutiles.</p>
-                    </li>
-
-                    <li>
-                        <h2>HSL (Hue, Saturation, Lightness): El formato humano</h2>
-                        <p>Este formato es el más querido por los desarrolladores que buscan programar de forma
-                            inteligente. En lugar de pensar en "luz mezclada", piensa en cómo los humanos percibimos el
-                            color.</p>
-
-                        <h3>Cómo funciona:</h3>
-                        <p>Utiliza la función <code>hsl(H, S, L)</code> con tres valores muy lógicos:</p>
-                        <ul>
-                            <li><strong>Hue (Tono):</strong> Se mide en grados (<code>0</code> a <code>360</code>) como
-                                una rueda de colores. El 0 es rojo, el 120 es verde, el 240 es azul.</li>
-                            <li><strong>Saturation (Saturación):</strong> Se mide en porcentaje. <code>0%</code> es gris
-                                grisáceo (sin color) y <code>100%</code> es el color en su máxima viveza.</li>
-                            <li><strong>Lightness (Luminosidad):</strong> Se mide en porcentaje. <code>0%</code> es
-                                negro absoluto, <code>100%</code> es blanco absoluto, y <code>50%</code> es el color
-                                puro.</li>
-                        </ul>
-
-                        <h3>Ejemplo en CSS:</h3>
-                        <pre><code>color: hsl(0, 100%, 50%); /* Rojo puro, vivo y con luz media */</code></pre>
-                    </li>
-                </ol>
-            </section>
+        <section id="overflow">
+            <h2>Overflow</h2>
+            <p>Qué queremos que pase cuando el tamaño del contenido es mayor que el tamaño del contenedor</p>
+            <p>Por defecto, el navegador muestra todo el contenido sin importar que este sea más grande que su
+                contenedor</p>
+            <div class="container-exact">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur iure, cum eos aliquid doloribus
+                    quisquam dolores illo beatae ratione sunt ab accusantium.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia dolores amet porro blanditiis
+                </p>
+            </div>
+            <div class="container-exact recortar">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur iure, cum eos aliquid doloribus
+                    quisquam dolores illo beatae ratione sunt ab accusantium
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur explicabo eveniet sit porro
+                    magni omnis excepturi, dicta harum suscipit quos animi vitae, delectus aperiam dolor quasi
+                    asperiores expedita nisi totam?
+                    Exercitationem expedita ut numquam fuga magni, libero suscipit explicabo sed in odio voluptas, cum
+                    iste, corrupti quae consectetur voluptatem quas dolorem asperiores officiis unde totam quia ducimus?
+                    Numquam, maiores fugiat!
+                </p>
+            </div>
+            <div class="container-exact scroll">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur iure, cum eos aliquid doloribus
+                    quisquam dolores illo beatae ratione sunt ab accusantiumat.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perspiciatis unde voluptatem harum
+                    soluta eius possimus ipsa animi omnis veritatis commodi nisi, dolore adipisci quaerat aliquam
+                    quibusdam quasi aspernatur ratione.
+                    Repellendus iste fuga veritatis sapiente porro. Perspiciatis magni alias nemo itaque quas. Molestias
+                    nesciunt magnam illum, sint, blanditiis, similique quidem aliquid doloremque doloribus itaque esse
+                    quia nobis accusantium aut est?
+                </p>
+            </div>
         </section>
+        <footer>
+            <p>&copy; Copyright - Digitalers 2026</p>
+        </footer>
     </main>
-    <footer>
-        <p>&copy; Copyright - Digitalers 2026</p>
-    </footer>
+    <section class="breadcrumb">
+        <h3>breadcrumb</h3>
+    </section>
+    <aside>
+        <nav>
+            <a href="#box-model">Box Model</a>
+            <a href="#overflow">Overflow</a>
+        </nav>
+
+        <div>
+            <h2>Links de interés</h2>
+            <a href="https://cssgridgarden.com/#es" target="_blank" rel="noopener noreferrer">CSS Garden</a>
+            <a href="https://kikdras.github.io/prompt-engineering/" target="_blank" rel="noopener noreferrer">Prompt
+                Engineering</a>
+        </div>
+    </aside>
+
 </body>
 
 </html>
