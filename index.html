@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/globals.css">
-    <link rel="stylesheet" href="css/conceptos/grid.css">
-    <link rel="stylesheet" href="css/conceptos/overflow.css">
     <link rel="stylesheet" href="css/index.css">
 
     <title>Digitalers</title>
@@ -15,131 +13,13 @@
 
 <body>
     <header>
-        <div class="bg">
-            <h1>Clase 09</h1>
-        </div>
+        <h1>Clase 10</h1>
     </header>
     <main>
-        <section id="box-model">
-            <h2>Box Modeling</h2>
-            <p>En CSS, el Box Modeling es una forma de pensar la estructura para realizar los diseños basada en cajas
-            </p>
-            <ul>
-                <li>Propiedades de la caja (cómo se forma la caja)
-                    <ul>
-                        <li>width</li>
-                        <li>height</li>
-                        <li>border</li>
-                        <li>margin</li>
-                        <li>padding</li>
-                    </ul>
-                </li>
-                <li>Forma en que se calcula el espacio ocupado por la caja
-                    <ul>
-                        <li>content-box (por defecto): El espacio final ocupado por la caja es el resultado de la suma
-                            de su contenido, width, padding, margin y border</li>
-                        <li>border-box: El espacio final ocupado por la caja es igual al width</li>
-                    </ul>
-                </li>
-                <li>Características de la caja (tipo de display)
-                    <ul>
-                        <li>Elemento de línea (display: inline)</li>
-                        <li>Elemento de bloque (display: block)</li>
-                        <li>Elemento de línea-bloque (display: inline-block)</li>
-                        <ul>Display de "control de posición" - Se utilizan para modificar el layout de los elementos
-                            contenidos
-                            <li>Elementos flexibles (display: flex)</li>
-                            <li>Elementos de grilla (display: grid)</li>
-                        </ul>
-                    </ul>
-                </li>
-                <h3>Display Grid (Grillas)</h3>
-                <p>Permite crear una estructura bidimensional de filas y columnas para el diseño de elementos web. Al
-                    aplicar esta propiedad a un elemento padre, sus hijos se organizan siguiendo la cuadrícula definida.
-                    Esto permite un control preciso sobre la posición y el tamaño de los elementos dentro del diseño.
-                </p>
-                <h4>Ejemplos</h4>
-                <h5>Declarar filas y columnas - La grilla NO ocupa todo el contenedor</h5>
-                <div class="grid row-col">
-                    <div class="contenido">1</div>
-                    <div class="contenido">2</div>
-                    <div class="contenido">3</div>
-                    <div class="contenido">4</div>
-                    <div class="contenido">5</div>
-                </div>
-                <h5>Declarar filas y columnas - La grilla ocupa todo el contenedor</h5>
-                <div class="grid row-col-full">
-                    <div class="contenido">1</div>
-                    <div class="contenido">2</div>
-                    <div class="contenido">3</div>
-                    <div class="contenido">4</div>
-                    <div class="contenido">5</div>
-                </div>
-                <h5>Grid Área</h5>
-                <p>Permite pensar los diseños en áreas de trabajo</p>
-                <div class="grid grid-area">
-                    <div class="contenido elemento-en-sidebar ">1</div>
-                    <div class="contenido elemento-en-body">2</div>
-                    <div class="contenido elemento-en-breadcrumb ">3</div>
-                    <div class="contenido elemento-en-header">4</div>
-                </div>
-            </ul>
-        </section>
-        <section id="overflow">
-            <h2>Overflow</h2>
-            <p>Qué queremos que pase cuando el tamaño del contenido es mayor que el tamaño del contenedor</p>
-            <p>Por defecto, el navegador muestra todo el contenido sin importar que este sea más grande que su
-                contenedor</p>
-            <div class="container-exact">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur iure, cum eos aliquid doloribus
-                    quisquam dolores illo beatae ratione sunt ab accusantium.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia dolores amet porro blanditiis
-                </p>
-            </div>
-            <div class="container-exact recortar">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur iure, cum eos aliquid doloribus
-                    quisquam dolores illo beatae ratione sunt ab accusantium
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur explicabo eveniet sit porro
-                    magni omnis excepturi, dicta harum suscipit quos animi vitae, delectus aperiam dolor quasi
-                    asperiores expedita nisi totam?
-                    Exercitationem expedita ut numquam fuga magni, libero suscipit explicabo sed in odio voluptas, cum
-                    iste, corrupti quae consectetur voluptatem quas dolorem asperiores officiis unde totam quia ducimus?
-                    Numquam, maiores fugiat!
-                </p>
-            </div>
-            <div class="container-exact scroll">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur iure, cum eos aliquid doloribus
-                    quisquam dolores illo beatae ratione sunt ab accusantiumat.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus perspiciatis unde voluptatem harum
-                    soluta eius possimus ipsa animi omnis veritatis commodi nisi, dolore adipisci quaerat aliquam
-                    quibusdam quasi aspernatur ratione.
-                    Repellendus iste fuga veritatis sapiente porro. Perspiciatis magni alias nemo itaque quas. Molestias
-                    nesciunt magnam illum, sint, blanditiis, similique quidem aliquid doloremque doloribus itaque esse
-                    quia nobis accusantium aut est?
-                </p>
-            </div>
-        </section>
-        <footer>
-            <p>&copy; Copyright - Digitalers 2026</p>
-        </footer>
     </main>
-    <section class="breadcrumb">
-        <h3>breadcrumb</h3>
-    </section>
-    <aside>
-        <nav>
-            <a href="#box-model">Box Model</a>
-            <a href="#overflow">Overflow</a>
-        </nav>
-
-        <div>
-            <h2>Links de interés</h2>
-            <a href="https://cssgridgarden.com/#es" target="_blank" rel="noopener noreferrer">CSS Garden</a>
-            <a href="https://kikdras.github.io/prompt-engineering/" target="_blank" rel="noopener noreferrer">Prompt
-                Engineering</a>
-        </div>
-    </aside>
-
+    <footer>
+        <p>&copy; Copyright - Digitalers 2026</p>
+    </footer>
 </body>
 
 </html>
