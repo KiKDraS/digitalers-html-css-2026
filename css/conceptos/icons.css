@@ -1,0 +1,13 @@
+.icons {
+    display: flex;
+    gap: 16px;
+
+    i {
+        font-size: 2rem;
+    }
+
+    .icon-whatsapp {
+        background-color: black;
+        border-radius: 50%;
+    }
+}

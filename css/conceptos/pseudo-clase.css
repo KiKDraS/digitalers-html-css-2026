@@ -1,0 +1,193 @@
+/*
+    Interacción y Acción
+*/
+
+.btn {
+    padding: 8px 4px;
+    background-color: blue;
+    color: whitesmoke;
+    font-weight: 500;
+    border: 1px solid blue;
+    border-radius: 8px;
+    min-width: 150px;
+    font-size: 1.2rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 255, 0.8);
+    border: 1px solid rgba(0, 0, 255, 0.8);
+}
+
+.btn:active {
+    background-color: crimson;
+    border: 1px solid crimson;
+}
+
+/*
+    Estado y Foco
+*/
+.form-input {
+    border: 1px solid gray;
+
+    /* .form-input:focus */
+    &:focus {
+        outline: none;
+        border-color: blue;
+    }
+
+    /* .form-input *:focus 
+    :focus{
+
+    }*/
+
+    &:focus-visible {
+        outline: 3px dashed crimson;
+    }
+}
+
+/*
+    Formularios y validación
+*/
+.form-field {
+    outline: none;
+
+    &:invalid {
+        border-color: crimson;
+    }
+
+    &:valid {
+        border-color: green;
+    }
+}
+
+.checkbox-input {
+
+    /*
+        Si el elemento con la clase checkbox-input fue seleccionado, quiero modificar el label que se encuentra directamente al lado
+    */
+    &:checked+label {
+        text-decoration: line-through;
+    }
+}
+
+/*
+    Estructurales
+*/
+
+/*
+    #classification:first-child -> Quiero modificar un elemento con el id="classification" que es primer hijo de su contenedor
+*/
+
+#classification {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
+    .category {
+
+        /*
+            #classification .category:first-child -> Quiero modificar cualquier elemento con class="category" que se encuentre dentro del elemento con el id="classification" que, además, sea el primer hijo
+        */
+        &:first-child {
+            /* :is(#classification) .category:first-of-type {} */
+            color: blueviolet;
+        }
+
+
+        /*
+            #classification .category:first-of-type -> Quiero modificar cualquier elemento con class="category" que se encuentre dentro del elemento con el id="classification" que, además, sea el primer hijo de ese tipo
+        */
+        &:first-of-type {
+            background-color: darkblue;
+            color: whitesmoke;
+        }
+
+        &:last-child {
+            color: darkblue;
+            background-color: whitesmoke;
+        }
+
+        /*
+            #classification .category:nth-child(X) -> Quiero modificar cualquier elemento con class="category" que se encuentre dentro del elemento con el id="classification" que, además, sea el X hijo del tipo
+        */
+        &:nth-child(odd) {
+            margin: 8px 0;
+        }
+    }
+}
+
+/*
+    Navegación
+*/
+.nav-link {
+    &:link {
+        color: cornflowerblue;
+    }
+
+    &:visited {
+        color: violet;
+    }
+}
+
+/*
+    Lógicas Modernas
+*/
+
+.card,
+#card {
+    background-color: lightblue;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+    width: fit-content;
+
+    .mi-clase {
+
+        /* Lo que el navegador ve -> :is(.card, #card) .mi-clase (110) */
+        color: red;
+        /* 
+            Forma tradicional 
+
+            .card .mi-clase{} (20)
+            #card .mi-clase{} (110) 
+        */
+    }
+}
+
+
+/*
+    Si h1, h2 o h3 es hijo de .card
+
+    El selector :is() genera un ÚNICO selector que engloba todos los selectores
+        -> .card :is(....) (110)
+*/
+.card :is(h1, h2, h3, #id) {
+    color: darkcyan;
+}
+
+/*
+    Selector de agrupación -> Junta muchos selectores para aplicar las mismas propiedades
+        -> .card h1 (11)
+        -> .card h2 (11)
+        -> .card h3 (11)
+        -> .card #id (110)
+*/
+.card h1,
+.card h2,
+.card h3,
+.card #id {}
+
+.form-group {
+    padding: 16;
+    border: 1px dashed gray;
+
+    /*
+        ¿Siempre quiero que el elemento padre se vea igual, sin importar qué tipo de interacción tenga el usuario?
+
+        Si el elemento .form-group tiene un child que sea un input inválido (input:invalido), aplicar los estilos declarados
+    */
+    &:has(input:invalid) {
+        border-left: 4px solid crimson;
+    }
+}

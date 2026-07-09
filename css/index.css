@@ -1,0 +1,18 @@
+body {
+    padding: 16px;
+}
+
+pre {
+    width: fit-content;
+    background-color: lightgray;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 8px 8px 2px gray;
+}
+
+code {
+    background-color: lightgray;
+    border-radius: 4px;
+    padding: 2px;
+}

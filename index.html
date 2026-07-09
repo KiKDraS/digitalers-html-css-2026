@@ -5,7 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Favicon - https://realfavicongenerator.net/ -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- Iconos - https://icomoon.io/ | https://fontawesome.com/ -->
+    <link rel="stylesheet" href="assets/icons/icons.css">
+
     <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/conceptos/icons.css">
+    <link rel="stylesheet" href="css/conceptos/pseudo-clase.css">
+    <link rel="stylesheet" href="css/conceptos/pseudo-elementos.css">
     <link rel="stylesheet" href="css/index.css">
 
     <title>Digitalers</title>
@@ -16,6 +29,303 @@
         <h1>Clase 10</h1>
     </header>
     <main>
+        <section id="icons">
+            <h2>Iconos</h2>
+            <div class="icons">
+                <i class="icon-github"></i>
+                <i class="icon-instagram"></i>
+                <i class="icon-linkedin"></i>
+                <i class="icon-whatsapp"></i>
+            </div>
+        </section>
+
+        <section id="pseudo-clase">
+            <h2>¿Qué es una pseudo-clase?</h2>
+            <p>
+                Una <dfn>pseudo-clase</dfn> es una palabra clave que se añade a los selectores de CSS para especificar
+                un <strong>estado especial</strong> del elemento seleccionado.
+            </p>
+            <p>
+                A diferencia de las clases comunes de HTML, las pseudo-clases permiten aplicar estilos basados en la
+                interacción del usuario, el historial de navegación, la posición en el DOM o el estado de validación de
+                un formulario, sin necesidad de añadir clases manuales o scripts de JavaScript.
+            </p>
+
+            <section id="classification">
+                <h3> Clasificación de pseudo-cases</h3>
+
+                <div class="category">
+                    <h3>🔹 Interacción y Acción</h3>
+                    <p>Se activan dinámicamente mediante el comportamiento del usuario con el dispositivo apuntador.</p>
+                    <ul>
+                        <li><code>:hover</code> - Cuando el cursor pasa por encima del elemento.</li>
+                        <li><code>:active</code> - En el momento exacto en que el elemento es presionado o cliqueado.
+                        </li>
+                    </ul>
+
+                    <button type="button" class="btn">Botón de Acción</button>
+                </div>
+
+                <div class="category">
+                    <h3>🔹 Estado y Foco</h3>
+                    <p>Cruciales para la accesibilidad; indican la posición actual del teclado o la navegación.</p>
+                    <ul>
+                        <li><code>:focus</code> - Cuando el elemento se selecciona (por ejemplo, mediante la tecla Tab).
+                        </li>
+                        <li><code>:focus-visible</code> - Aplica foco visual sólo si el navegador determina que ayuda a
+                            la
+                            navegación del usuario.</li>
+                    </ul>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="text">Mi input:</label>
+                            <input id="text" type="text" class="form-input" placeholder="Haz foco aquí...">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="category">
+                    <h3>🔹 Formularios y Validación</h3>
+                    <p>Monitorean el estado de los datos introducidos en elementos de entrada.</p>
+                    <ul>
+                        <li><code>:disabled</code> - Elementos de formulario deshabilitados.</li>
+                        <li><code>:checked</code> - Elementos seleccionados (checkboxes o radio buttons).</li>
+                        <li><code>:invalid</code> - Entradas de datos que no cumplen con los requisitos de validación.
+                        </li>
+                    </ul>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email requerido (Inválido por defecto):</label><br>
+                            <input id="email" type="email" class="form-field" required placeholder="ejemplo@correo.com">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="terminos" class="checkbox-input">
+                            <label for="terminos">Acepto los términos y condiciones de la web</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="category">
+                    <h3>🔹 Estructurales (posición en el HTML)</h3>
+                    <p>Seleccionan elementos según su orden jerárquico dentro del HTML.</p>
+                    <ul>
+                        <li><code>:first-child</code> / <code>:last-child</code> - Primer o último hijo de un
+                            contenedor.
+                        </li>
+                        <li><code>:nth-child(n)</code> - Selecciona elementos utilizando patrones numéricos o fórmulas
+                            aritméticas (ej. pares o impares).</li>
+                        <li>
+                            <code>:first-of-type</code> / <code>:last-of-type</code> - El primer o último elemento
+                            <strong>de su mismo tipo de etiqueta</strong> dentro de un contenedor.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="category">
+                    <h3>🔹 Historial y Enlaces</h3>
+                    <p>Rastrean el estado de las URLs en la sesión de navegación.</p>
+                    <ul>
+                        <li><code>:link</code> - Enlaces que aún no han sido visitados.</li>
+                        <li><code>:visited</code> - Enlaces que el usuario ya ha cliqueado en el pasado.</li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="#no-visitado-nunca" class="nav-link">Enlace no visitado</a></li>
+                        <li><a href="https://www.google.com" class="nav-link">Enlace probablemente visitado (Google)</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="pseudo-clases-modernas">
+                <h3>Pseudo-clases Lógicas y Avanzadas</h3>
+                <p>Estas herramientas modernas permiten agrupar selectores, manejar la especificidad y crear
+                    condicionales
+                    complejas de manera nativa.</p>
+
+                <div class="feature">
+                    <h3><code>:is()</code> (El Agrupador con Absorción)</h3>
+                    <p>Reduce la redundancia al agrupar selectores en una sola línea. Toma la especificidad del selector
+                        más
+                        pesado dentro de sus argumentos.</p>
+                    <pre><code>/* Simplifica: h1, h2, h3 dentro de un article */
+    article :is(h1, h2, h3) {
+      margin-bottom: 1rem;
+    }</code></pre>
+
+                    <div class="card">
+                        <h1>Título H1 afectado por :is()</h1>
+                        <h2>Subtítulo H2 afectado por :is()</h2>
+                        <h3>Sección H3 afectada por :is()</h3>
+                        <p>Este párrafo dentro de la card NO se ve afectado por la regla del grupo.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <h3><code>:where()</code> (El Selector de Peso Cero)</h3>
+                    <p>Funciona exactamente igual que <code>:is()</code>, pero su especificidad es **siempre cero
+                        (0,0,0,0)**, lo que lo hace perfecto para resets o sistemas de diseño altamente
+                        sobreescribibles.
+                    </p>
+                    <pre><code>/* Estilos base fáciles de pisar más adelante */
+    :where(.card, .sidebar) p {
+      color: gray;
+    }</code></pre>
+                </div>
+
+                <div class="feature">
+                    <h3><code>:has()</code> (El Selector Relacional o "Padre")</h3>
+                    <p>Permite aplicar estilos a un elemento contenedor basándose en lo que ocurre con sus hijos o
+                        hermanos.
+                        Es una de las funciones más potentes agregadas al CSS moderno.</p>
+                    <pre><code>/* Aplica estilos a la .card SOLO si contiene una imagen dentro */
+    .card:has(img) {
+      padding: 0;
+      border-radius: 8px;
+    }</code></pre>
+                </div>
+            </section>
+        </section>
+
+        <section id="pseudo-elemento">
+            <h2>Pseudo-elementos (::)</h2>
+            <p><strong>¿Qué es un pseudo-elemento?</strong> A diferencia de las pseudo-clases (que manejan
+                <em>estados</em> como <code>:hover</code>), un pseudo-elemento sirve para crear u organizar
+                <strong>partes específicas de un elemento</strong> o inyectar contenido virtual en la ventana desde CSS
+                sin
+                tocar el HTML.
+            </p>
+            <ul>
+                <li><strong>::first-letter</strong> - Primera letra de un párrafo.</li>
+                <li><strong>::first-line</strong> - Primera línea de un párrafo.</li>
+                <li><strong>::selection</strong> - Texto seleccionado.</li>
+                <li><strong>::before/::after</strong> - Añaden contenido antes/después del elemento.</li>
+            </ul>
+
+            <section>
+                <h3>1. ::before y ::after</h3>
+                <p>Permiten inyectar contenido decorativo antes o después del contenido real de un elemento. Es
+                    obligatorio usar la propiedad <code>content</code>.</p>
+
+                <pre><code>.alerta::before { content: "⚠️ ATENCIÓN: "; color: red; }
+.link-externo::after { content: " ↗"; }</code></pre>
+
+                <div class="demo-container">
+                    <p class="alerta">Este es un mensaje de error crítico en la interfaz.</p>
+                    <p>Puedes leer más documentación en este <a href="https://example.com" class="link-externo"
+                            target="_blank">enlace externo</a>.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3>2. ::placeholder</h3>
+                <p>Permite darle estilos específicos al texto de sugerencia temporal que va dentro de los elementos de
+                    formulario como <code>&lt;input&gt;</code> o <code>&lt;textarea&gt;</code>.</p>
+
+                <pre><code>input::placeholder { color: #a0aec0; font-style: italic; }</code></pre>
+
+                <div class="demo-container">
+                    <label for="buscar">Buscar componentes:</label><br>
+                    <input type="text" id="buscar" class="input-custom" placeholder="Ej: Flexbox, Grid, Nesting...">
+                </div>
+            </section>
+
+            <section>
+                <h3>3. ::selection</h3>
+                <p>Controla los estilos de cualquier texto o elemento en el momento exacto en el que el usuario lo
+                    selecciona arrastrando el cursor del ratón o manteniendo presionado en pantallas táctiles.</p>
+
+                <pre><code>p::selection { background-color: #ffe066; color: #000; }</code></pre>
+
+                <div class="demo-container">
+                    <p class="texto-seleccionable"><strong>¡Pruébame!</strong> Selecciona este bloque de texto con tu
+                        mouse o tu dedo y verás cómo cambia el color de fondo del resaltado por defecto azul del
+                        navegador a uno amarillo personalizado.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3>4. ::first-letter y ::first-line</h3>
+                <p>Selectores de diseño editorial. <code>::first-letter</code> apunta a la letra capital (la primera del
+                    párrafo) y <code>::first-line</code> aplica estilos exclusivamente a la primera línea renderizada en
+                    pantalla.</p>
+
+                <pre><code>p::first-letter { font-size: 3.5rem; float: left; color: blue; }
+p::first-line { font-weight: bold; }</code></pre>
+
+                <div class="demo-container">
+                    <p class="articulo">Este párrafo simula el comienzo de una nota periodística o artículo de blog de
+                        alta calidad visual. Si cambias el tamaño de la ventana del navegador, verás que la primera
+                        línea mantiene su estilo en negrita de forma dinámica sin importar qué palabras se reacomoden.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h3>5. ::marker</h3>
+                <p>Permite seleccionar y modificar de forma directa la viñeta (el punto o número) de los elementos de
+                    una lista sin tener que ocultarlos con trucos complejos.</p>
+
+                <pre><code>li::marker { content: "⚡ "; font-size: 1.2rem; }</code></pre>
+
+                <div class="demo-container">
+                    <ul class="lista-custom">
+                        <li>Primer requerimiento del sistema de desarrollo.</li>
+                        <li>Segundo requerimiento totalmente responsivo.</li>
+                        <li>Validaciones de accesibilidad web (WCAG) completadas.</li>
+                    </ul>
+                </div>
+
+                <section id="marker-vs-before">
+                    <h4>::marker vs ::before</h4>
+                    <ul>
+                        <li><strong><code>::marker</code> (Nativo):</strong> Modifica directamente la viñeta que el
+                            navegador ya calculó. Es ultra eficiente, pero <strong>altamente limitado</strong>. Solo
+                            acepta
+                            propiedades de fuente, color y contenido (no permite layouts, márgenes, fondos complejos ni
+                            sombras).</li>
+                        <li><strong><code>::before</code> (Custom):</strong> Requiere apagar la viñeta nativa con
+                            <code>list-style: none</code> y simular una nueva. Es más laborioso, pero te otorga **el
+                            100% de
+                            las propiedades de CSS** (flexbox, degradados, sombras, tamaños fijos en px, etc.).
+                        </li>
+                    </ul>
+
+                    <pre><code>/* Código utilizado en la comparativa de abajo */
+    .enfoque-marker li::marker {
+      content: "🔥";
+    }
+    
+    .enfoque-before {
+      list-style: none;
+      li {
+        display: flex; gap: 12px;
+        &::before {
+          content: ""; width: 10px; height: 10px;
+          background: linear-gradient(135deg, #535bf2, #9c27b0);
+          border-radius: 50%; box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+      }
+    }</code></pre>
+                    <div class="grid-comparativa">
+                        <ul class="enfoque-marker">
+                            <li>Usa la caja nativa de la viñeta.</li>
+                            <li>Alineación automática del navegador.</li>
+                            <li>Limitado a texto o emojis planos.</li>
+                        </ul>
+
+                        <ul class="enfoque-before">
+                            <li>Viñeta hecha a mano (Caja virtual).</li>
+                            <li>Control total con Flexbox y gaps.</li>
+                            <li>Soporta sombras, bordes y degradados.</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+        </section>
     </main>
     <footer>
         <p>&copy; Copyright - Digitalers 2026</p>
