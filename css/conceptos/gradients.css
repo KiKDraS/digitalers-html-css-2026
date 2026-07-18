@@ -1,0 +1,103 @@
+.gradient-linear-horizontal,
+.gradient-linear-diagonal,
+.gradient-linear-multicolor {
+    width: 300px;
+    height: 150px;
+    border-radius: 8px;
+}
+
+.gradient-linear-horizontal {
+    /* backgroundimage: linear-gradient(90deg, #ff7e5f, #feb47b); */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+}
+
+.gradient-linear-diagonal {
+    background: linear-gradient(to bottom right, #667eea, #764ba2);
+}
+
+.gradient-linear-multicolor {
+    background: linear-gradient(315deg,
+            red, orange, yellow, green,
+            blue, rgba(76, 0, 130, 0.592), rgb(208, 14, 208));
+}
+
+.gradient-radial-circle,
+.gradient-radial-ellipse,
+.gradient-radial-closest {
+    width: 200px;
+    height: 200px;
+}
+
+.gradient-radial-circle {
+    background: radial-gradient(circle, #f9d423, #ff4e50);
+}
+
+.gradient-radial-ellipse {
+    background: radial-gradient(ellipse at bottom, #a8edea, #fed6e3);
+}
+
+.gradient-radial-closest {
+    /*
+        at X Y
+    */
+    background: radial-gradient(closest-side at 30% 50%,
+            #ff7e5f, #feb47b, #667eea);
+}
+
+.gradient-conic,
+.gradient-conic-simple {
+    width: 200px;
+    height: 200px;
+}
+
+.gradient-conic {
+    /* background: conic-gradient(red, yellow, lime, aqua,
+            blue, magenta, red); */
+    background: conic-gradient(red 0deg, yellow 90deg, lime 180deg, aqua 270deg,
+            blue 360deg);
+    border-radius: 50%;
+}
+
+.gradient-conic-simple {
+    background: conic-gradient(from 0deg,
+            #ff7e5f 0deg,
+            #feb47b 90deg,
+            #667eea 180deg,
+            #764ba2 270deg,
+            #ff7e5f 360deg);
+    border-radius: 50%;
+}
+
+.gradient-repeating,
+.gradient-repeating-rainbow,
+.gradient-multiple {
+    width: 500px;
+    height: 150px;
+}
+
+.gradient-repeating {
+    background: repeating-linear-gradient(45deg,
+            #ff7e5f 0px, #ff7e5f 10px,
+            #feb47b 10px, #feb47b 20px);
+}
+
+.gradient-repeating-rainbow {
+    background: repeating-linear-gradient(to right,
+            red 0px, red 20px, orange 20px,
+            orange 40px, yellow 40px, yellow 60px, green 60px, green 80px,
+            blue 80px, blue 100px, indigo 100px, indigo 120px,
+            violet 120px, violet 140px);
+    border-radius: var(--radius-sm);
+}
+
+.gradient-multiple {
+    background:
+        /* Capa superior: degradado semitransparente */
+        linear-gradient(135deg,
+            rgba(102, 126, 234, 0.6),
+            rgba(118, 75, 162, 0.6)),
+        /* Capa inferior: patrón repetitivo */
+        repeating-linear-gradient(45deg,
+            #ff7e5f 0px, #ff7e5f 5px,
+            #feb47b 5px, #feb47b 10px);
+}
