@@ -1,0 +1,146 @@
+a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 16px;
+}
+
+/*
+    Transición de entrada 
+        -> Transicionan el paso del estado A al B, pero no la vuelta
+
+    Trigger de transición
+        -> ¿Cuándo quiero que ocurra? | ¿Qué tiene que pasar para que inicie la transición?   
+*/
+.entrada {
+    /*
+        Estado Base (A)
+    */
+    background-color: #ddd;
+    color: #222;
+    padding: 8px;
+
+    /*
+        .entrada *:hover
+        :hover { .... }
+    */
+
+    /*
+        .entrada:hover { ... }
+    */
+    &:hover {
+        /*
+            Estado Final (B)
+        */
+        background-color: #fff;
+        color: #666;
+        padding: 24px;
+
+        transition-property: all;
+        /*
+            * Solo aplicar si las propiedades de los estados son idénticas
+            * Solo aplicar si todas las propiedades se van a transicionar con los mismos valores
+        */
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+    }
+}
+
+/*
+    Transición entrada-salida
+*/
+.entrada-salida {
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+
+    /*
+        Estado Base (A)
+    */
+    background-color: black;
+    /* transición hacia el estado base */
+    transition: background-color 0.5s ease;
+
+    &:hover {
+        /*
+            Estado Final (B)
+        */
+        background-color: red;
+        /* transición hacia el estado final */
+        transition: background-color 1s ease-in-out;
+    }
+}
+
+/*
+    Transición múltiple
+*/
+.multiple {
+    color: white;
+
+    /*
+        Estado Base (A)
+    */
+    padding: 8px;
+    background-color: black;
+    /* transición hacia el estado base */
+    transition: background-color 0.5s ease, padding 1s ease-out;
+
+    &:hover {
+        /*
+            Estado Final (B)
+        */
+        padding: 24px;
+        background-color: red;
+        /* transición hacia el estado final */
+        transition: background-color 1s ease-in-out, padding 2s ease;
+    }
+}
+
+/*
+    Ejemplo Info
+*/
+.expand-info-container {
+    width: fit-content;
+    cursor: default;
+    margin: 16px;
+    position: relative;
+
+    .icon {
+        color: blue;
+    }
+
+    .info {
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        width: 300px;
+        overflow: hidden;
+
+        position: absolute;
+        bottom: 8px;
+        left: 32px;
+
+        /*
+            Estado Inicial (A)
+        */
+        height: 0;
+        opacity: 0;
+        /* transición hacia estado inicial (salida) */
+        transition: height 0.5s ease, opacity 0.2s ease;
+    }
+
+
+    &:hover {
+
+        .info {
+            padding: 16px;
+            border: 1px solid #ccc;
+
+            /*
+                Estado Final (B)
+            */
+            height: 200px;
+            opacity: 1;
+            /* transición hacia el estado final (entrada) */
+            transition: height 0.5s ease, opacity 0.5s ease;
+        }
+    }
+}

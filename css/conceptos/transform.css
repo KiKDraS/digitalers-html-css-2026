@@ -1,0 +1,125 @@
+.rotate,
+.scale,
+.translate {
+    width: 150px;
+    height: 150px;
+    background-color: cadetblue;
+    margin: 24px auto;
+}
+
+.rotate {
+    border-top-right-radius: 24px;
+
+    /*
+        Estado Base (A) - No tiene aplicado transform
+    */
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+
+        /*
+            Estado Final (B) - Realizar la acción correspondiente a la transformación
+        */
+        transform: rotate(180deg);
+    }
+}
+
+.scale {
+    /*
+        Estado Base (A) - No tiene aplicado transform
+    */
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+        /*
+            Estado Final (B) - Realizar la acción correspondiente a la transformación
+        */
+        transform: scale(1.1);
+    }
+}
+
+.wrapper {
+    width: 532px;
+    /* border: 1px solid black; */
+    padding: 16px;
+    margin-bottom: 16px;
+
+    .translate {
+        margin: 0;
+        /*
+            Estado Base (A) - No tiene aplicado transform
+        */
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &:hover {
+        /* background-color: aqua; */
+
+        /*
+            Estado Final (B) - Realizar la acción correspondiente a la transformación
+        */
+        .translate {
+            transform: translate(350px);
+        }
+    }
+}
+
+/*
+    Ejemplo Real - Overlay
+*/
+.image-card {
+    width: 300px;
+    height: 200px;
+    border-radius: var(--radius-lg);
+    margin: var(--space-md) 0;
+
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        img {
+            transform: scale(1.2);
+        }
+
+        .image-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    img {
+        margin: 0;
+
+        width: 100%;
+        height: 100%;
+
+        /*
+            object-fit === simil background-size
+
+            Valores
+            * cover - la imagen cubre el contenedor (se recorta)
+            * contain - encaja la imagen completa (puede dejar bordes)
+            * fill - equivale width/height 100%
+            * none - tamaño original de la imagen incrustado dentro del contenedor
+        */
+        object-fit: cover;
+
+        transition: transform 0.5s ease;
+    }
+
+    .image-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: var(--space-md);
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+}

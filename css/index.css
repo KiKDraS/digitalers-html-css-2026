@@ -44,7 +44,7 @@ section {
     img {
         width: clamp(350px, 80dvw, 750px);
         display: block;
-        margin: var(--space-md) auto;
+        margin: var(--space-md) 0;
     }
 
     /* 📌 :is() agrupa h2 y p que comparten margin vertical */
@@ -85,6 +85,7 @@ section {
     }
 
     .warning {
+        width: fit-content;
         background-color: #fff3cd;
         border: 1px solid #ffc107;
         border-radius: var(--radius-sm);
@@ -97,6 +98,34 @@ section {
         a {
             color: #667eea;
             font-weight: 600;
+        }
+    }
+}
+
+nav {
+    margin-top: var(--space-sm);
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+
+    a {
+        display: inline-block;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 3px;
+            background-image: linear-gradient(to right, blue, cyan);
+
+            width: 0;
+            transition: width 0.2s ease-out;
+        }
+
+        &:hover::after {
+            width: 100%;
         }
     }
 }

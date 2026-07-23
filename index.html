@@ -12,13 +12,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
-    <!-- Iconos - https://icomoon.io/ | https://fontawesome.com/ -->
-    <link rel="stylesheet" href="assets/icons/icons.css">
+    <!-- Material Design Icons - https://fonts.google.com/icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=help" />
+
     <link rel="stylesheet" href="css/globals.css">
 
     <!-- Conceptos -->
-    <link rel="stylesheet" href="css/conceptos/position.css">
-    <link rel="stylesheet" href="css/conceptos/gradients.css">
+    <link rel="stylesheet" href="css/conceptos/transitions.css">
+    <link rel="stylesheet" href="css/conceptos/transform.css">
+    <link rel="stylesheet" href="css/conceptos/animation.css">
 
     <link rel="stylesheet" href="css/index.css">
 
@@ -27,542 +30,192 @@
 
 <body>
     <header>
-        <h1>Clase 13</h1>
-        <!-- Número ajustado a calendario oficial -->
-
+        <h1>Clase 14</h1>
         <nav>
-            <a href="https://lenguajecss.com/css/posicionamiento/position/">Position</a><a
-                href="https://lenguajecss.com/css/gradientes/que-son">Gradientes</a><a
-                href="https://lenguajecss.com/css/fuentes-y-tipografias/textos-degradados/">Textos con degradados</a>
+            <a href="https://lenguajecss.com/animaciones/transiciones/que-son/" target="_blank">Transiciones</a>
+            <a href="https://lenguajecss.com/css/transformaciones/transform/" target="_blank">Transformaciones</a>
+            <a href="https://lenguajecss.com/animaciones/animaciones/que-son/" target="_blank">Animaciones</a>
         </nav>
     </header>
     <main>
         <section>
-            <h2>Position</h2>
-            <p>La propiedad position controla <strong>cómo se coloca</strong> un elemento en la página. Tiene 5 valores
-                principales:</p>
-
-            <ul>
-                <li><strong>static</strong> — (valor por defecto): el elemento sigue el flujo normal de la página.</li>
-                <li><strong>relative</strong> — se mueve respecto a su posición original (con top, left, etc.).</li>
-                <li><strong>absolute</strong> — se posiciona respecto a su ancestro más cercano con position (no
-                    static). Si no encuentra ninguno, se ubica en relación al body.</li>
-                <li><strong>fixed</strong> — se queda fijo en la pantalla (útil para menús que no se mueven al hacer
-                    scroll).</li>
-                <li><strong>sticky</strong> — híbrido entre relative y fixed ("se pega" al hacer scroll).</li>
-            </ul>
-
-            <img src="assets/images/position.webp" alt="css position">
-
-            <article>
-                <h3>1. Static — Estático</h3>
-                <p>Es el valor <strong>por defecto</strong>. El elemento se coloca según el <strong>flujo
-                        normal</strong> de la página, uno debajo del otro. Las propiedades <code>top</code>,
-                    <code>left</code>, <code>right</code> y <code>bottom</code> <strong>no tienen ningún
-                        efecto</strong>.
-                </p>
-
-                <div class="box static">Static</div>
-
-                <pre><code>.static {
-    /* position: static; — es el valor por defecto */
-    /* top, left, right, bottom no funcionan aquí */
-}</code></pre>
-            </article>
-
-            <article>
-                <h3>2. Relative — Relativo</h3>
-                <p>El elemento se mueve <strong>respecto a su posición original</strong>. Usa <code>top</code>,
-                    <code>left</code>, <code>right</code> y <code>bottom</code> para desplazarlo. El espacio que ocupaba
-                    originalmente <strong>se reserva</strong> (los elementos de alrededor no se reacomodan).
-                </p>
-
-                <div class="box relative">Relative (top: 8px)</div>
-
-                <pre><code>.relative {
-    position: relative;
-    top: 8px;    /* se desplaza 8px hacia abajo */
-    left: 0;     /* podés usar left, right, bottom */
-}</code></pre>
-            </article>
-
-            <article>
-                <h3>3. Absolute — Absoluto</h3>
-                <p>El elemento <strong>sale del flujo normal</strong> (los demás elementos lo ignoran) y se posiciona
-                    respecto a su <strong>ancestro más cercano</strong> que tenga <code>position: relative</code>,
-                    <code>absolute</code>, <code>fixed</code> o <code>sticky</code>.
-                </p>
-
-                <p>En este ejemplo, el cuadro chocolate está adentro de un contenedor con
-                    <code>position: relative</code>, por eso se ubica en la <strong>esquina inferior derecha</strong> de
-                    ese contenedor:
-                </p>
-
-                <div class="box relative-2">
-                    <div class="box absolute">Absolute</div>
-                </div>
-
-                <pre><code>.relative-2 {
-    position: relative;  /* este contenedor es el ancla */
-    width: 95vw;
-    max-width: 550px;
-    height: 35vh;
-    max-height: 500px;
-    border: 1px solid black;
-}
-
-.absolute {
-    position: absolute;
-    bottom: 0;   /* pegado al borde inferior */
-    right: 0;    /* pegado al borde derecho */
-}</code></pre>
-                <p class="warning"><strong>⚠️ Cuidado:</strong> Si ningún ancestro tiene <code>position</code>
-                    declarado, el elemento
-                    absolute se "escapa" y se posiciona respecto al <code>&lt;body&gt;</code>. El cuadro con la clase
-                    "absolute-no-reference", no
-                    tiene un contenedor con position (no
-                    static) como padre y por eso se fue al body:</p>
-
-                <div class="box absolute-no-reference">¡Estoy perdido! 😱</div>
-
-                <pre><code>/* Sin un ancestro con position (no
-                    static), este cuadro
-   se posiciona respecto al &lt;body&gt; */
-.absolute-no-reference {
-    position: absolute;
-    top: 0;      /* se pega al borde superior del body */
-    right: 0;    /* se pega al borde derecho del body */
-}</code></pre>
-
-                <h4>📌 z-index: superposición de capas</h4>
-                <p>Cuando dos elementos <strong>se superponen</strong>, <code>z-index</code> controla quién queda
-                    arriba. Es como una pila de capas: <strong>mayor valor = más arriba</strong>. Solo funciona si
-                    el elemento tiene <code>position</code> distinto de <code>static</code>.
-                </p>
-
-                <div class="relative-2">
-                    <div class="box absolute">Absolute (z-index: 2)</div>
-                    <div class="box absolute absolute-2">Absolute 2 (z-index: 3)</div>
-                    <div class="box absolute-3">Absolute 3 (z-index: 1)</div>
-                </div>
-
-                <pre><code>.absolute  { z-index: 2; }
-.absolute-2 { z-index: 3; }  /* ← este queda arriba */
-.absolute-3 { z-index: 1; }  /* ← este queda abajo */</code></pre>
-
-            </article>
-
-            <article>
-                <h3>4. Fixed — Fijo</h3>
-                <p>El elemento <strong>sale del flujo normal</strong> y se queda <strong>fijo en la ventana del
-                        navegador</strong>. No importa si hacés scroll hacia arriba o abajo — el elemento siempre se ve
-                    en la misma posición de la pantalla.</p>
-
-                <p>📌 <strong>Usos comunes:</strong> menús de navegación fijos, botones flotantes,
-                    banners de cookies.</p>
-
-                <div class="box fixed">Fixed</div>
-
-                <pre><code>.fixed {
-    position: fixed;
-    bottom: 0;   /* pegado al borde inferior */
-    right: 0;    /* pegado al borde derecho */
-}</code></pre>
-            </article>
-
-            <article>
-                <h3>5. Sticky — Pegajoso</h3>
-                <p>Es un <strong>híbrido</strong> entre <code>relative</code> y <code>fixed</code>: se comporta como
-                    <code>relative</code> hasta que el scroll alcanza un límite (definido con <code>top</code>,
-                    <code>left</code>, etc.), y en ese momento se "pega" y se comporta como <code>fixed</code>.
-                </p>
-
-                <pre><code>nav {
-    position: sticky;
-    top: 0;   /* cuando el scroll llega a 0, se "pega" arriba */
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-}</code></pre>
-
-                <div class="box sticky">Position: Sticky</div>
-
-                <h4>📌 ¿Por qué sticky parece no funcionar a veces?</h4>
-
-                <p><strong>1. El contenedor padre es el que manda.</strong><br>
-                    <code>position: sticky</code> solo funciona <strong>dentro de los límites de su contenedor
-                        padre</strong>. El elemento se "pega" cuando llega al <code>top</code> indicado, pero
-                    <strong>deja
-                        de pegarse</strong> cuando el borde inferior del padre está a punto de pasarlo. Es decir: el
-                    padre actúa como un "carril" que limita hasta dónde puede moverse el elemento sticky.
-                </p>
-                <p class="warning">⚠️ <strong>El <code>&lt;nav&gt;</code> de esta página NO funciona como
-                        sticky.</strong> ¿Por qué?
-                    Porque está <strong>dentro del <code>&lt;header&gt;</code></strong>. El contenedor padre del nav
-                    es el header, y el header ocupa solo una parte de la pantalla. Apenas el header sale de la ventana
-                    al hacer scroll, el nav se va con él — el sticky se "despega" porque el carril del padre se terminó.
-                </p>
-                <p>Para que funcione, el <code>&lt;nav&gt;</code> debería ser hijo directo del
-                    <code>&lt;body&gt;</code> (o de un contenedor que abarque toda la altura del viewport). Así el
-                    carril del sticky sería toda la página y el nav se mantendría pegado arriba mientras scrolleás el
-                    contenido.
-                </p>
-
-                <p><strong>2. Compatibilidad con <code>display: flex</code> y <code>display: grid</code>.</strong><br>
-                    Cuando un contenedor usa <code>display: flex</code> o <code>display: grid</code>, el
-                    <strong>comportamiento sticky puede fallar o comportarse distinto</strong> por dos razones:
-                </p>
-                <ul>
-                    <li>
-                        <strong>El contenedor padre es el que define el área de scroll.</strong> En un flex o grid
-                        container, el sticky se pega dentro del <strong>área del ítem</strong>, no del contenedor
-                        entero.
-                        Si el contenedor flex/grid tiene <code>overflow: hidden</code> o una altura fija, el sticky
-                        queda limitado a ese espacio.
-                    </li>
-                    <li>
-                        <strong>El valor de <code>align-self</code> o <code>justify-self</code> puede
-                            interferir.</strong>
-                        En flexbox, por defecto los hijos se estiran (<code>align-self: stretch</code>), y un elemento
-                        sticky no puede pegarse correctamente si su altura es igual a la del contenedor (no tiene
-                        espacio
-                        para scroll). Solución: usar <code>align-self: flex-start</code> para que el elemento tenga su
-                        altura natural y pueda desplazarse.
-                    </li>
-                </ul>
-
-                <pre><code>/* ❌ Sticky no funciona bien en flex si el hijo se estira */
-.flex-container {
-    display: flex;
-
-    .child {
-        position: sticky;
-        top: 0;
-        /* align-self: stretch (por defecto) → sin espacio para scrollear */
-    }
-}
-
-/* ✅ Solución: darle altura natural al hijo sticky */
-.flex-container nav {
-    display: flex;
-
-    .child {
-        position: sticky;
-        top: 0;
-        align-self: flex-start;  /* o height: auto */
-    }
-}</code></pre>
-
-                <h4>✅ Ejemplo funcional: sticky con flex</h4>
-                <div class="flex-layout">
-                    <aside class="sticky-sidebar">
-                        <strong>📌 Sticky</strong>
-                        <small>se queda pegado al scrollear</small>
-                    </aside>
-                    <div class="flex-content">
-                        <p>1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <p>2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <p>3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <p>4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <p>5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <p>6. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <p>7. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                        <p>8. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                    </div>
-                </div>
-            </article>
-
-            <div class="icon-container">
-                <i class="icon icon-whatsapp"></i>
-                <div class="chat">
-                    <div class="chat-box">
-                        <div class="messages">
-                            <p class="text">Hola, cómo puedo ayudarte?</p>
-                        </div>
-                        <div class="input">
-                            <label for="chat-text">Escriba texto</label>
-                            <input type="text" id="chat-text" placeholder="Ingrese texto" name="chat-text">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h2>Degradados en CSS</h2>
-            <p>Los degradados (<strong>gradients</strong>) permiten crear transiciones suaves entre dos o más colores
-                directamente desde CSS. Son ideales para fondos, botones, tarjetas y más — sin necesidad de imágenes.
+            <h2>Transiciones</h2>
+            <p>
+                Las transiciones se basan en un principio muy básico: conseguir un
+                efecto suavizado entre un estado inicial y un estado final al realizar
+                una acción. Por ejemplo, utilizando la pseudo-clase <code>:hover</code> podemos
+                cambiar las propiedades CSS aplicadas a un elemento HTML cuando el
+                usuario pasa el mouse por encima del elemento. Si, además, aplicamos
+                transiciones ese cambio se visualizará de forma más pausada y orgánica
+                generando una sensación de movimiento
             </p>
 
-            <ul>
-                <li><strong>lineal</strong> — el color cambia en una dirección recta (horizontal, vertical, diagonal).
-                </li>
-                <li><strong>radial</strong> — el color se expande desde un punto central, como un círculo o elipse.
-                </li>
-                <li><strong>cónico</strong> — los colores giran alrededor de un punto, como una rueda cromática.</li>
-                <li><strong>repetitivo</strong> — el patrón del degradado se repite una y otra vez.</li>
-            </ul>
+            <p class="warning">
+                ⚠️ <strong>Importante:</strong> No todas las propiedades de CSS son transicionables. Por regla
+                general, las propiedades cuantificables son transicionables.
+            </p>
 
-            <!-- ============ 1. LINEAR GRADIENT ============ -->
-            <article>
-                <h3>1. linear-gradient() — Degradado lineal</h3>
-                <p>El degradado más común. Los colores se distribuyen en una <strong>línea recta</strong>.
-                    Podés controlar la <strong>dirección</strong> con palabras clave (<code>to right</code>,
-                    <code>to bottom</code>, etc.) o con <strong>ángulos</strong> (<code>45deg</code>,
-                    <code>135deg</code>).
-                </p>
-
-                <h4>📐 ¿Cómo funcionan los ángulos?</h4>
-                <p>El ángulo indica la <strong>dirección de la línea</strong> del degradado. El primer color se ubica al
-                    <strong>inicio</strong> de esa línea y el último al <strong>final</strong>.
-                </p>
-
-                <p>Los ángulos en CSS crecen en sentido <strong>horario</strong> (como las agujas del reloj),
-                    empezando desde <strong>arriba</strong>:</p>
-
-                <pre><code>             
-            ↑ 0deg (to top)
-            │
-270deg ←────┼────→ 90deg
-(to left)   │      (to right)
-            ↓
-        180deg (to bottom)
-    </code></pre>
-
-                <p>Para que sea más fácil, acá están todas las equivalencias:</p>
-
-                <div style="overflow-x: auto; margin: 16px 0;">
-                    <table style="border-collapse: collapse; width: 100%; max-width: 600px; font-size: 0.9rem;">
-                        <thead>
-                            <tr style="background: #333; color: white;">
-                                <th style="padding: 8px 12px; text-align: left; border: 1px solid #444;">Ángulo</th>
-                                <th style="padding: 8px 12px; text-align: left; border: 1px solid #444;">Keyword</th>
-                                <th style="padding: 8px 12px; text-align: left; border: 1px solid #444;">Inicio → Final
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>0deg</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>to top</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;">abajo → arriba</td>
-                            </tr>
-                            <tr style="background: #f0f0ff;">
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>45deg</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>to top right</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;">inf-izquierda → sup-derecha</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>90deg</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>to right</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;">izquierda → derecha</td>
-                            </tr>
-                            <tr style="background: #f0f0ff;">
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>135deg</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>to bottom right</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;">sup-izquierda → inf-derecha</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>180deg</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>to bottom</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;">arriba → abajo</td>
-                            </tr>
-                            <tr style="background: #f0f0ff;">
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>225deg</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>to bottom left</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;">sup-derecha → inf-izquierda</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>270deg</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>to left</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;">derecha → izquierda</td>
-                            </tr>
-                            <tr style="background: #f0f0ff;">
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>315deg</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;"><code>to top left</code></td>
-                                <td style="padding: 6px 12px; border: 1px solid #ddd;">inf-derecha → sup-izquierda</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p class="warning"><strong>⚠️ Importante:</strong> En matemática, 0° apunta a la
-                    <strong>derecha</strong>
-                    y los ángulos crecen en sentido <strong>anti-horario</strong>. En CSS, 0deg apunta
-                    <strong>arriba</strong> y crece en sentido <strong>horario</strong> (como un reloj).<br>
-                    <code>45deg</code> y <code>to top right</code> producen
-                    <strong>exactamente el mismo resultado</strong> — veamos:
-                </p>
-
-                <h4>→ Horizontal</h4>
-                <div class="gradient-linear-horizontal"></div>
-                <pre><code>.gradient-linear-horizontal {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-}</code></pre>
-
-                <h4>→ Diagonal (135deg)</h4>
-                <div class="gradient-linear-diagonal"></div>
-                <pre><code>.gradient-linear-diagonal {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    /* 135deg = to bottom right = sup-izquierda → inf-derecha */
-}</code></pre>
-
-                <h4>→ Múltiples colores (arcoíris)</h4>
-                <div class="gradient-linear-multicolor"></div>
-                <pre><code>.gradient-linear-multicolor {
-    background: linear-gradient(to right,
-        red, orange, yellow, green,
-        blue, indigo, violet);
-}</code></pre>
-            </article>
-
-            <article>
-                <h3>2. radial-gradient() — Degradado radial</h3>
-                <p>El color se expande desde un <strong>punto central</strong> hacia afuera. Podés elegir entre
-                    forma <strong>circular</strong> o <strong>elíptica</strong>, y controlar el tamaño con palabras
-                    clave como <code>closest-side</code> o <code>farthest-corner</code>.
-                </p>
-
-                <h4>→ Circular</h4>
-                <div class="gradient-radial-circle"></div>
-                <pre><code>.gradient-radial-circle {
-    background: radial-gradient(circle, #f9d423, #ff4e50);
-}</code></pre>
-
-                <h4>→ Elíptica</h4>
-                <div class="gradient-radial-ellipse"></div>
-                <pre><code>.gradient-radial-ellipse {
-    background: radial-gradient(ellipse at center, #a8edea, #fed6e3);
-}</code></pre>
-
-                <h4>→ control de tamaño: closest-side</h4>
-                <div class="gradient-radial-closest"></div>
-                <pre><code>.gradient-radial-closest {
-    background: radial-gradient(
-        closest-side at 30% 50%,
-        #ff7e5f, #feb47b, #667eea
-    );
-}</code></pre>
-
-                <p class="warning"><strong>💡 Dato:</strong> <code>closest-side</code> mide el gradiente hasta el lado
-                    más cercano del contenedor. <code>farthest-corner</code> (valor por defecto) lo mide hasta la
-                    esquina
-                    más lejana. Esto cambia cómo se ve el degradado según el tamaño del contenedor.</p>
-            </article>
-
-            <article>
-                <h3>3. conic-gradient() — Degradado cónico</h3>
-                <p>Los colores giran <strong>alrededor de un punto central</strong>, como si fuera una rueda cromática.
-                    Se usa mucho para hacer <strong>gráficos de torta</strong>, ruedas de colores y efectos circulares.
-                </p>
-
-                <h4>→ Rueda de colores</h4>
-                <div class="gradient-conic"></div>
-                <pre><code>.gradient-conic {
-    background: conic-gradient(
-        red, yellow, lime, aqua,
-        blue, magenta, red
-    );
-    border-radius: 50%;
-}</code></pre>
-
-                <h4>→ Con paradas de color específicas</h4>
-                <div class="gradient-conic-simple"></div>
-                <pre><code>.gradient-conic-simple {
-    background: conic-gradient(
-        from 0deg,
-        #ff7e5f 0deg,
-        #feb47b 90deg,
-        #667eea 180deg,
-        #764ba2 270deg,
-        #ff7e5f 360deg
-    );
-    border-radius: 50%;
-}</code></pre>
-            </article>
-
-            <article>
-                <h3>4. repeating-* — Degradados repetitivos</h3>
-                <p>¿Y si el degradado se <strong>repite</strong> en lugar de estirarse? Con
-                    <code>repeating-linear-gradient()</code> y <code>repeating-radial-gradient()</code> podés crear
-                    <strong>patrones</strong> tipo cebra, rayas, cuadros y más.
-                </p>
-
-                <h4>→ Patrón diagonal tipo cebra</h4>
-                <div class="gradient-repeating"></div>
-                <pre><code>.gradient-repeating {
-    background: repeating-linear-gradient(
-        45deg,
-        #ff7e5f 0px, #ff7e5f 10px,
-        #feb47b 10px, #feb47b 20px
-    );
-}</code></pre>
-
-                <h4>→ Franjas de colores</h4>
-                <div class="gradient-repeating-rainbow"></div>
-                <pre><code>.gradient-repeating-rainbow {
-    background: repeating-linear-gradient(
-        to right,
-        red 0px, red 20px,
-        orange 20px, orange 40px,
-        yellow 40px, yellow 60px  /* ... */
-    );
-}</code></pre>
-
-                <p class="warning"><strong>⚠️ Cuidado:</strong> La clave de los degradados repetitivos está en las
-                    <strong>paradas de color</strong>. Cada color debe terminar donde empieza el siguiente para que el
-                    patrón sea continuo. Si hay espacios, verás <strong>transiciones</strong> en lugar de cortes
-                    definidos.
-                </p>
-            </article>
-
-            <article>
-                <h3>6. Combinar degradados (capas)</h3>
-                <p>Podés <strong>apilar</strong> varios degradados separándolos con coma. El primero queda arriba, el
-                    último abajo. Esto permite crear efectos complejos con transparencia.
-                </p>
-
-                <div class="gradient-multiple"></div>
-                <pre><code>.gradient-multiple {
-    background:
-        /* Capa superior: degradado semitransparente */
-        linear-gradient(
-            135deg,
-            rgba(102, 126, 234, 0.6),
-            rgba(118, 75, 162, 0.6)
-        ),
-        /* Capa inferior: patrón repetitivo */
-        repeating-linear-gradient(
-            45deg,
-            #ff7e5f 0px, #ff7e5f 5px,
-            #feb47b 5px, #feb47b 10px
-        );
-}</code></pre>
-
-                <p class="warning"><strong>💡 Dato:</strong> Los degradados con <code>rgba()</code> o
-                    <code>hsla()</code> combinados con <strong>opacidad</strong> permiten que las capas de abajo se
-                    vean a través de las de arriba. Es una técnica muy usada para crear texturas visuales sin imágenes.
-                </p>
-            </article>
-
-            <article class="herramientas">
-                <h3>7. Herramientas útiles para crear degradados</h3>
-                <p>Estos sitios te ayudan a <strong>visualizar y generar</strong> degradados sin escribir código desde
-                    cero:
-                </p>
+            <section>
+                <h3>Propiedades de transición</h3>
                 <ul>
+                    <li><code>transition-property</code> - ¿Qué propiedades van a transicionar?</li>
+                    <li><code>transition-duration</code> - ¿Cuánto tiempo dura la transición?</li>
                     <li>
-                        <a href="https://cssgradient.io" target="_blank" rel="noopener noreferrer">cssgradient.io</a>
-                        — Generador simple con previsualización en vivo. Ideal para crear degradados lineales y
-                        radiales y copiar el CSS al instante.
+                        <code>transition-timing-function</code> - ¿Cómo se distribuyen los milisegundos
+                        de duración?
                     </li>
+                    <li><code>transition-delay</code> - ¿Cuánto tarda la transición en arrancar?</li>
                     <li>
-                        <a href="https://uigradients.com" target="_blank" rel="noopener noreferrer">uigradients.com</a>
-                        — Colección de degradados pre-diseñados. Perfecto para inspirarse y ver combinaciones de
-                        colores que funcionan bien juntos.
+                        <code>transition</code> (shorthand) - <em>property</em> <em>duration</em>
+                        <em>timing-function</em> <em>delay(?)</em>
                     </li>
                 </ul>
-            </article>
-        </section>
+            </section>
 
+            <section>
+                <h3>Tipos de transiciones</h3>
+
+                <section>
+                    <h4>Transición de entrada</h4>
+                    <p>Transición que se encarga de aplicar un estilo al momento de lanzar la transición.</p>
+                    <img src="assets/images/estado-transicion.png" alt="Esquema transición">
+                    <a href="#" class="entrada">Transición de entrada</a>
+                </section>
+
+
+                <section>
+                    <h4>Transición de entrada-salida</h4>
+                    <p>Transición que se encarga de aplicar un estilo al momento de lanzar la transición y al momento de
+                        que
+                        ya no se cumpla la condición para aplicar la transición de entrada.</p>
+                    <img src="assets/images/transiciones-entrada-salida.png" alt="Esquema transición entrada-salida">
+                    <a href="#" class="entrada-salida">Transición de entrada-salida</a>
+                </section>
+
+                <section>
+                    <h4>Transición Múltiple</h4>
+                    <p>Aplicar transición a varias propiedades de CSS en entrada y salida en una sola línea</p>
+                    <a href="#" class="multiple">Transición múltiple</a>
+                </section>
+
+                <section>
+                    <h4>Ejemplo: contenido expandible</h4>
+
+                    <div class="expand-info-container">
+                        <span class="material-symbols-outlined icon">
+                            help
+                        </span>
+                        <p class="info">Este contenido adicional se revela con una transición suave de
+                            <strong>max-height</strong> y <strong>opacity</strong>. Las transiciones no solo sirven para
+                            colores y tamaños, también para mostrar/ocultar contenido.
+                        </p>
+                    </div>
+
+                </section>
+            </section>
+        </section>
+        <section>
+            <h2>Transformaciones</h2>
+            <p>
+                Las transformaciones son funciones de CSS que permiten cambiar la
+                posición, la dirección o el tamaño de un elemento un elemento del HTML
+            </p>
+
+            <section>
+                <h3>Funciones disponibles</h3>
+                <ul>
+                    <li>
+                        <code>translate(x, y)</code> - mueve el elemento en el eje de coordenadas
+                    </li>
+                    <li><code>rotate(deg)</code> - rota el elemento (grados, sentido horario)</li>
+                    <li><code>scale(factor)</code> - agranda o achica (1 = original, 0.5 = mitad)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Ejemplos</h3>
+                <div class="rotate">ROTATE</div>
+                <div class="scale">SCALE</div>
+                <div class="wrapper">
+                    <div class="translate">TRANSLATE</div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Ejemplo real: Tarjeta de imagen</h3>
+                <p>
+                    Combinando <code>scale()</code> y <code>translate()</code> podemos crear efectos
+                    como las tarjetas de galería que se ven en muchos sitios web. Al pasar el mouse,
+                    la imagen hace zoom y un texto se desliza desde abajo.
+                </p>
+
+                <div class="image-card">
+                    <img src="assets/images/position.webp" alt="Ejemplo de tarjeta">
+                    <div class="image-overlay">
+                        <h4>Titulo de la imagen</h4>
+                        <p>Descripción breve de la imagen</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section>
+            <h2>Animaciones</h2>
+            <p>
+                Las transiciones permiten cambiar un elemento entre dos estados. Por
+                su parte, las animaciones permiten el cambio entre múltiples estados
+                e, incluso, es posible plantear una repetición infinita de estos
+                cambios.
+                <br />
+                Una animación, entonces, es la suma de varias transiciones. Estás
+                transiciones son conocidas como fotogramas y se arman utilizando la
+                propiedad <code>@keyframes</code>
+            </p>
+
+            <section>
+                <h3>Propiedades de animación</h3>
+                <ul>
+                    <li><code>animation-name</code> - Nombre de la animación a aplicar.</li>
+                    <li><code>animation-duration</code> - Duración de la animación.</li>
+                    <li><code>animation-timing-function</code> - Ritmo de la animación.</li>
+                    <li><code>animation-delay</code> - Retardo en iniciar la animación.</li>
+                    <li>
+                        <code>animation-iteration-count</code> - Número de veces que se repetirá.
+                        (infinite === nunca termina)
+                    </li>
+                    <li>
+                        <code>animation-play-state</code> - Estado de la animación. (usando JS permite
+                        iniciar/pausar la animación)
+                    </li>
+                    <li>
+                        <code>animation</code> (shorthand) - name duration timing-function delay iteration-count
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Ejemplos</h3>
+
+                <section>
+                    <h4>1. Animación simple — Pulse</h4>
+                    <div class="pulse"></div>
+                </section>
+
+                <section>
+                    <h4>2. Fotogramas — Cambio de colores</h4>
+                    <div class="simple"></div>
+                </section>
+
+                <section>
+                    <h4>3. Loader con delays escalonados</h4>
+                    <div class="loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </section>
+            </section>
+        </section>
     </main>
     <footer>
         <p>&copy; Copyright - Digitalers 2026</p>
