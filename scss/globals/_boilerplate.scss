@@ -1,0 +1,17 @@
+/*
+    @use - importa elementos para usar dentro de un archivo
+*/
+@use "./colors" as colors;
+@use "./fonts" as fonts;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  background-color: colors.$background;
+  color: colors.$text;
+  font-family: fonts.$primary;
+}

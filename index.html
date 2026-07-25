@@ -12,209 +12,106 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
-    <!-- Material Design Icons - https://fonts.google.com/icons -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&icon_names=help" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="css/globals.css">
-
-    <!-- Conceptos -->
-    <link rel="stylesheet" href="css/conceptos/transitions.css">
-    <link rel="stylesheet" href="css/conceptos/transform.css">
-    <link rel="stylesheet" href="css/conceptos/animation.css">
-
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="dist/style.css">
 
     <title>Digitalers</title>
 </head>
 
 <body>
     <header>
-        <h1>Clase 14</h1>
-        <nav>
-            <a href="https://lenguajecss.com/animaciones/transiciones/que-son/" target="_blank">Transiciones</a>
-            <a href="https://lenguajecss.com/css/transformaciones/transform/" target="_blank">Transformaciones</a>
-            <a href="https://lenguajecss.com/animaciones/animaciones/que-son/" target="_blank">Animaciones</a>
-        </nav>
+        <h1>Clase 15</h1>
     </header>
-    <main>
-        <section>
-            <h2>Transiciones</h2>
-            <p>
-                Las transiciones se basan en un principio muy básico: conseguir un
-                efecto suavizado entre un estado inicial y un estado final al realizar
-                una acción. Por ejemplo, utilizando la pseudo-clase <code>:hover</code> podemos
-                cambiar las propiedades CSS aplicadas a un elemento HTML cuando el
-                usuario pasa el mouse por encima del elemento. Si, además, aplicamos
-                transiciones ese cambio se visualizará de forma más pausada y orgánica
-                generando una sensación de movimiento
-            </p>
-
-            <p class="warning">
-                ⚠️ <strong>Importante:</strong> No todas las propiedades de CSS son transicionables. Por regla
-                general, las propiedades cuantificables son transicionables.
+    <main class="grid">
+        <section class="grid__main">
+            <h2>Sass</h2>
+            <!-- 
+                // Configuración para la extensión Live Sass Compiler (ctrl+shift+p -> Open User Settings (JSON) )
+                "liveSassCompile.settings.formats": [
+                    {
+                    "format": "compressed", // CSS output minificado (sin espacios/ saltos)
+                    "extensionName": ".css", // genera archivos .css
+                    "savePath": "/dist", // se guardan en la carpeta /dist
+                    "savePathReplacementPairs": null, // no reemplaza carpetas de origen
+                    },
+                ],
+            -->
+            <p><a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">Sass</a> es un
+                <strong>pre-procesador de CSS</strong>. Agrega funciones que CSS puro no tiene.
             </p>
 
             <section>
-                <h3>Propiedades de transición</h3>
+                <h3>Conceptos Básicos</h3>
                 <ul>
-                    <li><code>transition-property</code> - ¿Qué propiedades van a transicionar?</li>
-                    <li><code>transition-duration</code> - ¿Cuánto tiempo dura la transición?</li>
-                    <li>
-                        <code>transition-timing-function</code> - ¿Cómo se distribuyen los milisegundos
-                        de duración?
+                    <li>Variables: Guardan valores reutilizables (colores, tamaños, etc.).</li>
+                    <li>Anidamiento (Nesting): Escribe reglas CSS dentro de otras, reflejando la estructura HTML.</li>
+                    <li>Mixins: Funciones que reutilizan bloques de estilos.</li>
+                    <li>Herencia (@extend): Comparte estilos entre selectores.</li>
+                    <li>Módulos: Importa otros archivos Sass para reutilizar código.
+                        <ul>
+                            <li><code>@use</code> — Recomendado. Importa un archivo como módulo con
+                                <strong>namespace</strong> (ej: <code>u.$font</code>). Usar siempre que necesites
+                                variables
+                                o mixins de otro archivo.
+                            </li>
+                            <li><code>@forward</code> — Re-exporta miembros de otros archivos. Usar en archivos índice
+                                (<code>_index.scss</code>) para agrupar exports.</li>
+                        </ul>
                     </li>
-                    <li><code>transition-delay</code> - ¿Cuánto tarda la transición en arrancar?</li>
-                    <li>
-                        <code>transition</code> (shorthand) - <em>property</em> <em>duration</em>
-                        <em>timing-function</em> <em>delay(?)</em>
-                    </li>
+                    <li>Parciales: Archivos Sass que comienzan con _ (ej: _variables.scss) y no se compilan a CSS.</li>
                 </ul>
             </section>
 
             <section>
-                <h3>Tipos de transiciones</h3>
-
-                <section>
-                    <h4>Transición de entrada</h4>
-                    <p>Transición que se encarga de aplicar un estilo al momento de lanzar la transición.</p>
-                    <img src="assets/images/estado-transicion.png" alt="Esquema transición">
-                    <a href="#" class="entrada">Transición de entrada</a>
-                </section>
-
-
-                <section>
-                    <h4>Transición de entrada-salida</h4>
-                    <p>Transición que se encarga de aplicar un estilo al momento de lanzar la transición y al momento de
-                        que
-                        ya no se cumpla la condición para aplicar la transición de entrada.</p>
-                    <img src="assets/images/transiciones-entrada-salida.png" alt="Esquema transición entrada-salida">
-                    <a href="#" class="entrada-salida">Transición de entrada-salida</a>
-                </section>
-
-                <section>
-                    <h4>Transición Múltiple</h4>
-                    <p>Aplicar transición a varias propiedades de CSS en entrada y salida en una sola línea</p>
-                    <a href="#" class="multiple">Transición múltiple</a>
-                </section>
-
-                <section>
-                    <h4>Ejemplo: contenido expandible</h4>
-
-                    <div class="expand-info-container">
-                        <span class="material-symbols-outlined icon">
-                            help
-                        </span>
-                        <p class="info">Este contenido adicional se revela con una transición suave de
-                            <strong>max-height</strong> y <strong>opacity</strong>. Las transiciones no solo sirven para
-                            colores y tamaños, también para mostrar/ocultar contenido.
-                        </p>
-                    </div>
-
-                </section>
+                <h3>Componentes</h3>
+                <p>Unidad reutilizable con estilos, HTML y funcionalidad.</p>
+                <button class="btn">
+                    <span class="btn__text">Componente botón</span>
+                </button>
+                <button class="btn--blue">
+                    <span class="btn__text">Otro Componente botón (no hereda)</span>
+                </button>
+                <button class="btn--red">
+                    <span class="btn__text">Otro Componente botón (hereda)</span>
+                </button>
             </section>
         </section>
-        <section>
-            <h2>Transformaciones</h2>
-            <p>
-                Las transformaciones son funciones de CSS que permiten cambiar la
-                posición, la dirección o el tamaño de un elemento un elemento del HTML
-            </p>
-
-            <section>
-                <h3>Funciones disponibles</h3>
-                <ul>
-                    <li>
-                        <code>translate(x, y)</code> - mueve el elemento en el eje de coordenadas
-                    </li>
-                    <li><code>rotate(deg)</code> - rota el elemento (grados, sentido horario)</li>
-                    <li><code>scale(factor)</code> - agranda o achica (1 = original, 0.5 = mitad)</li>
-                </ul>
-            </section>
-
-            <section>
-                <h3>Ejemplos</h3>
-                <div class="rotate">ROTATE</div>
-                <div class="scale">SCALE</div>
-                <div class="wrapper">
-                    <div class="translate">TRANSLATE</div>
-                </div>
-            </section>
-
-            <section>
-                <h3>Ejemplo real: Tarjeta de imagen</h3>
-                <p>
-                    Combinando <code>scale()</code> y <code>translate()</code> podemos crear efectos
-                    como las tarjetas de galería que se ven en muchos sitios web. Al pasar el mouse,
-                    la imagen hace zoom y un texto se desliza desde abajo.
-                </p>
-
-                <div class="image-card">
-                    <img src="assets/images/position.webp" alt="Ejemplo de tarjeta">
-                    <div class="image-overlay">
-                        <h4>Titulo de la imagen</h4>
-                        <p>Descripción breve de la imagen</p>
-                    </div>
-                </div>
-            </section>
-        </section>
-        <section>
-            <h2>Animaciones</h2>
-            <p>
-                Las transiciones permiten cambiar un elemento entre dos estados. Por
-                su parte, las animaciones permiten el cambio entre múltiples estados
-                e, incluso, es posible plantear una repetición infinita de estos
-                cambios.
-                <br />
-                Una animación, entonces, es la suma de varias transiciones. Estás
-                transiciones son conocidas como fotogramas y se arman utilizando la
-                propiedad <code>@keyframes</code>
-            </p>
-
-            <section>
-                <h3>Propiedades de animación</h3>
-                <ul>
-                    <li><code>animation-name</code> - Nombre de la animación a aplicar.</li>
-                    <li><code>animation-duration</code> - Duración de la animación.</li>
-                    <li><code>animation-timing-function</code> - Ritmo de la animación.</li>
-                    <li><code>animation-delay</code> - Retardo en iniciar la animación.</li>
-                    <li>
-                        <code>animation-iteration-count</code> - Número de veces que se repetirá.
-                        (infinite === nunca termina)
-                    </li>
-                    <li>
-                        <code>animation-play-state</code> - Estado de la animación. (usando JS permite
-                        iniciar/pausar la animación)
-                    </li>
-                    <li>
-                        <code>animation</code> (shorthand) - name duration timing-function delay iteration-count
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <h3>Ejemplos</h3>
-
-                <section>
-                    <h4>1. Animación simple — Pulse</h4>
-                    <div class="pulse"></div>
-                </section>
-
-                <section>
-                    <h4>2. Fotogramas — Cambio de colores</h4>
-                    <div class="simple"></div>
-                </section>
-
-                <section>
-                    <h4>3. Loader con delays escalonados</h4>
-                    <div class="loader">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </section>
-            </section>
+        <section class="grid__sidebar">
+            <h2>CSS</h2>
+            <ul>
+                <li>Custom properties (variables CSS): Guardan valores reutilizables. Se definen con
+                    <code>--nombre</code> y se usan con <code>var()</code>.
+                </li>
+                <li>CSS Nesting: Técnica para escribir reglas CSS dentro de otras, reflejando la estructura HTML</li>
+                <li>Módulos (@import): Importa otros archivos CSS para reutilizar código.</li>
+                <li>Funciones: Operaciones predefinidas que procesan valores. Las más comunes
+                    <ul>
+                        <li>Matemáticas
+                            <ul>
+                                <li>calc</li>
+                                <li>clamp</li>
+                            </ul>
+                        </li>
+                        <li>Colores
+                            <ul>
+                                <li>hsl</li>
+                                <li>rgba</li>
+                            </ul>
+                        </li>
+                        <li>Transformación
+                            <ul>
+                                <li>rotate</li>
+                                <li>scale</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
     </main>
     <footer>

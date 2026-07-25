@@ -1,0 +1,57 @@
+@use "../utils/functions" as f;
+@use "../utils/breakpoints" as b;
+
+/*
+    Nomenclatura BEM
+        -> Block: componente principal (.grid)
+        -> Element: parte del Block, se separa __ (.grid__main)
+        -> Modifier: variante del Block/Element, se separa con --
+*/
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: f.rem(40);
+  margin: auto;
+
+  /*
+    min(a, b) = elige el valor más chico entre a y b
+        -> a = 100% - 2.5rem (ancho total - padding de 40px)
+        -> b = 62.5rem (máximo fijo)
+    .grid -> ocupa todo el ancho disponible, pero no pasa de 1240px    
+  */
+  width: min(100% - f.rem(40), f.rem(1240));
+
+  //   @media (min-width: 900px) {
+  //     grid-template-columns: 2fr 1fr;
+  //   }
+
+  @include b.breakpoint(l) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  //   @media (min-width: 1440px) {
+  //     background-color: aliceblue;
+  //   }
+
+  @include b.breakpoint(xl) {
+    background-color: aliceblue;
+  }
+
+  //.grid__main, .grid__sidebar
+  &__main,
+  &__sidebar {
+    padding: f.rem(24);
+  }
+
+  //.grid__main
+  &__main {
+    background-color: blue;
+  }
+
+  //.grid__sidebar
+  &__sidebar {
+    background-color: yellowgreen;
+  }
+}
