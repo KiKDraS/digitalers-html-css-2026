@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Rubik Dirt';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../assets/fonts/RubikDirt-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url('../../assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Share Tech Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../assets/fonts/ShareTechMono-Regular.ttf') format('truetype');
+}
+
+:root {
+    --color-shark: #584e4e;
+    --color-green: #7ade30;
+    --color-gray: #656060;
+    --color-bg-1: #1b1b32;
+    --color-bg-2: #0d6efd;
+    --font-rubik: "Rubik Dirt", cursive;
+
+    /*
+        Reemplazar estilos Bootstrap
+    */
+    --bs-font-sans-serif: "Quicksand", sans-serif;
+    --bs-font-monospace: "Share Tech Mono", monospace;
+    --bs-light: #f5f6f7;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: 2.5rem;
+        font-family: var(--font-rubik);
+    }
+
+    h2 {
+        font-size: 2rem;
+        padding: 16px 0;
+        font-family: var(--font-rubik);
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        color: var(--color-shark);
+    }
+}
+
+/*
+    Utility Class
+*/
+
+.dark-section {
+    color: var(--bs-white);
+    background-color: var(--color-bg-1);
+}
+
+.light-section {
+    color: var(--bs-dark);
+    background-color: var(--bs-white);
+}
+
+/*
+    Modificar Clases de Bootstrap
+*/
+.btn-info {
+    font-size: 1.1rem !important;
+    /* En versiones antiguas, había que aplicar !important */
+    margin: 18px;
+}

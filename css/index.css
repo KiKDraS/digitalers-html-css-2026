@@ -1,0 +1,22 @@
+/*
+    Punto de entrada
+*/
+
+/*
+    Globals
+*/
+@import url("./globals/bootstrap.min.css");
+@import url("../assets/icons/bootstrap-icons.min.css");
+@import url("./globals/boilerplate.css");
+
+/*
+    Components
+*/
+@import url("./components/navbar.css");
+
+/*
+    Sections
+*/
+@import url("./sections/hero-section.css");
+@import url("./sections/experience.css");
+@import url("./sections/testimonials.css");

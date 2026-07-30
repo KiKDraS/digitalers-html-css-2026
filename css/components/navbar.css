@@ -1,0 +1,23 @@
+.navbar {
+    max-height: 76px;
+    padding: 24px;
+    background-color: var(--bs-light);
+}
+
+.navbar-brand {
+    img {
+        width: 50px;
+    }
+
+    /* @media (max-width: 767px) {
+        display: none;
+    } */
+}
+
+.navbar-collapse {
+    @media (max-width: 767px) {
+        background-color: var(--bs-light);
+        position: relative;
+        top: 16px
+    }
+}

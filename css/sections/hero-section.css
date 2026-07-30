@@ -1,0 +1,28 @@
+.hero {
+    background-color: var(--bs-light);
+    min-height: calc(100dvh - 76px);
+}
+
+.hero-principal {
+    padding: 40px;
+
+    h2 {
+        font-size: 1.5rem;
+        color: #615151;
+    }
+}
+
+.hero-imagen-desarrollador {
+    --image-width-height: 200px;
+
+    width: var(--image-width-height);
+    height: var(--image-width-height);
+    /* margin: 24px; */
+}
+
+.hero-inferior {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2rem;
+}

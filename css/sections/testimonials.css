@@ -1,0 +1,19 @@
+#testimonials {
+    padding: 40px 40px 80px 40px;
+
+    .carousel {
+        max-width: 800px;
+    }
+
+    .carousel-item {
+        height: 500px;
+
+        img {
+            --img-width-height: 140px;
+
+            height: var(--img-width-height);
+            width: var(--img-width-height);
+            margin: 8px 8px 16px 8px;
+        }
+    }
+}
